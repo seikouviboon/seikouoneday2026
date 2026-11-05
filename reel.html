@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebFast 199 - Facebook & TikTok Reel Studio (60s)</title>
+  
+  <!-- Google Fonts: Prompt & Kanit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;0,600;0,700;0,800;0,900;1,800&family=Prompt:ital,wght@0,400;0,600;0,700;0,800&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    body {
+      font-family: 'Prompt', sans-serif;
+      background-color: #0F172A;
+      color: #F8FAFC;
+    }
+    .font-reel {
+      font-family: 'Kanit', sans-serif;
+    }
+    /* Mobile phone mock frame */
+    .reel-container {
+      aspect-ratio: 9 / 16;
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      max-height: 820px;
+    }
+    /* Kinetic pop animations */
+    @keyframes popIn {
+      0% { transform: scale(0.5); opacity: 0; }
+      70% { transform: scale(1.15); opacity: 1; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    @keyframes bounceBadge {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-8px) rotate(-2deg); }
+    }
+    @keyframes pulseGlow {
+      0%, 100% { filter: drop-shadow(0 0 10px rgba(0, 210, 255, 0.4)); }
+      50% { filter: drop-shadow(0 0 25px rgba(0, 210, 255, 0.9)); }
+    }
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      20%, 60% { transform: translateX(-6px); }
+      40%, 80% { transform: translateX(6px); }
+    }
+    .anim-pop { animation: popIn 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
+    .anim-bounce { animation: bounceBadge 2s ease-in-out infinite; }
+    .anim-glow { animation: pulseGlow 1.8s infinite; }
+    .anim-shake { animation: shake 0.5s ease-in-out; }
+    
+    /* Text sticker style for Reels */
+    .reel-sticker-yellow {
+      background: #FACC15;
+      color: #000000;
+      text-shadow: none;
+      box-shadow: 0 8px 0 #CA8A04, 0 15px 25px rgba(0,0,0,0.4);
+    }
+    .reel-sticker-red {
+      background: #EF4444;
+      color: #FFFFFF;
+      box-shadow: 0 8px 0 #B91C1C, 0 15px 25px rgba(0,0,0,0.4);
+    }
+    .reel-sticker-cyan {
+      background: #0284C7;
+      color: #FFFFFF;
+      box-shadow: 0 8px 0 #0369A1, 0 15px 25px rgba(0,0,0,0.4);
+    }
+    .reel-sticker-green {
+      background: #10B981;
+      color: #FFFFFF;
+      box-shadow: 0 8px 0 #047857, 0 15px 25px rgba(0,0,0,0.4);
+    }
+  </style>
+</head>
+
+<body class="min-h-screen bg-slate-950 text-slate-100 flex flex-col items-center justify-start p-3 sm:p-6">
+
+  <!-- Header & Toolbar -->
+  <header class="w-full max-w-4xl flex items-center justify-between pb-4 mb-4 border-b border-slate-800">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-xl overflow-hidden p-0.5 bg-gradient-to-tr from-blue-600 to-cyan-500 shadow-lg">
+        <img src="logo.jpg" alt="Logo" class="w-full h-full object-cover rounded-[10px]" onerror="this.src='Gemini_Generated_Image_yxhnl9yxhnl9yxhn.jpg'">
+      </div>
+      <div>
+        <h1 class="font-reel font-bold text-lg sm:text-xl text-white flex items-center gap-2">
+          <span>WebFast 199 - Reel Video Studio</span>
+          <span class="text-xs font-semibold px-2 py-0.5 rounded bg-pink-600/30 text-pink-400 border border-pink-500/40">9:16 Reel</span>
+        </h1>
+        <p class="text-xs text-slate-400">สร้างคลิปลีลตรงตามสคริปต์ 60 วินาที พร้อมพากย์เสียงภาษาไทย & Export วิดีโอ</p>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-2">
+      <a href="index.html" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs text-slate-300 font-medium transition-colors flex items-center gap-1.5">
+        <i data-lucide="globe" class="w-3.5 h-3.5 text-cyan-400"></i>
+        <span class="hidden sm:inline">ดูหน้าเว็บหลัก</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Studio Main Content Area -->
+  <main class="w-full max-w-5xl grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+    
+    <!-- LEFT: REEL PLAYER (Mobile 9:16 Mockup) -->
+    <div class="lg:col-span-6 flex flex-col items-center">
+      
+      <!-- Phone Mockup Frame -->
+      <div class="reel-container relative rounded-[38px] p-3 bg-slate-900 border-4 border-slate-800 shadow-2xl shadow-blue-900/30 overflow-hidden flex flex-col">
+        
+        <!-- Phone Camera Notch / Speaker -->
+        <div class="absolute top-4 left-1/2 -translate-x-1/2 w-28 h-5 bg-black rounded-full z-40 flex items-center justify-center">
+          <div class="w-3 h-3 rounded-full bg-slate-900 mr-2"></div>
+          <div class="w-10 h-1 bg-slate-800 rounded-full"></div>
+        </div>
+
+        <!-- Video Screen Inside (Canvas + Dynamic DOM Scene Layer) -->
+        <div id="reelScreen" class="relative w-full h-full rounded-[30px] overflow-hidden bg-slate-950 flex flex-col justify-between select-none">
+          
+          <!-- Top Reel Overlay (Account & Audio Tag) -->
+          <div class="relative z-30 pt-8 px-4 flex items-center justify-between text-xs text-white">
+            <div class="flex items-center gap-2 bg-black/40 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10">
+              <img src="logo.jpg" class="w-5 h-5 rounded-full object-cover">
+              <span class="font-bold text-xs tracking-wide">onedayweb2026</span>
+              <span class="text-[10px] bg-blue-600 px-1.5 py-0.2 rounded font-semibold">Follow</span>
+            </div>
+            <div class="flex items-center gap-1 bg-black/40 backdrop-blur-md px-2 py-1 rounded-full border border-white/10 text-[10px] text-slate-300">
+              <i data-lucide="music" class="w-3 h-3 text-cyan-400"></i>
+              <span>WebFast 199 • Original Audio</span>
+            </div>
+          </div>
+
+          <!-- SCENE 1: (0:00 - 0:05) The Hook (Pain Point) -->
+          <div id="scene1" class="reel-scene absolute inset-0 flex flex-col justify-between items-center p-6 text-center z-20 bg-cover bg-center overflow-hidden transition-opacity duration-300" style="background-image: url('reel-scene1-hook.jpg');">
+            <!-- Top Dark Gradient Overlay for Badges -->
+            <div class="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-black/80 via-black/40 to-transparent pointer-events-none"></div>
+
+            <div class="relative z-10 pt-10 flex flex-col items-center">
+              <div class="reel-sticker-red font-reel font-black text-2xl sm:text-3xl px-4 py-2 rounded-2xl mb-2.5 transform -rotate-2 anim-pop">
+                "ยิงแอดแล้วเงียบ"
+              </div>
+              <div class="reel-sticker-yellow font-reel font-black text-xl px-4 py-1.5 rounded-xl mb-4 transform rotate-1 anim-pop">
+                เพราะไม่มีหน้าเว็บ? 🤔
+              </div>
+            </div>
+
+            <div class="relative z-10 pb-20">
+              <div class="bg-black/80 backdrop-blur-md px-4 py-2 rounded-xl border border-red-500/50 text-xs text-red-300 font-bold shadow-2xl anim-bounce">
+                ❌ แอดแพง ลูกค้าทักแล้วหายเงียบ
+              </div>
+            </div>
+          </div>
+
+          <!-- SCENE 2: (0:05 - 0:12) The Solution Reveal -->
+          <div id="scene2" class="reel-scene absolute inset-0 flex flex-col justify-center items-center p-6 text-center z-20 bg-gradient-to-b from-blue-950/80 via-slate-950 to-slate-950 hidden transition-opacity duration-300">
+            <div class="reel-sticker-red font-reel font-black text-2xl px-5 py-2 rounded-2xl mb-3 transform -rotate-1 anim-pop">
+              ไม่ต้องจ่ายเป็นหมื่น! ❌
+            </div>
+            <div class="reel-sticker-yellow font-reel font-black text-3xl px-6 py-2.5 rounded-2xl mb-6 transform rotate-2 anim-bounce">
+              เสร็จใน 1 วัน! ⚡
+            </div>
+
+            <!-- Mini Phone Mockup with scrolling landing page -->
+            <div class="w-48 h-64 rounded-2xl border-2 border-cyan-400 bg-slate-900 overflow-hidden shadow-2xl relative">
+              <img src="hero-banner.jpg" class="w-full h-full object-cover">
+              <div class="absolute inset-x-0 bottom-2 px-2">
+                <div class="bg-blue-600 text-white font-bold text-[10px] py-1 rounded text-center shadow-lg">
+                  ตอบคำถาม & ปิดการขายออโต้
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SCENE 3: (0:12 - 0:25) WebFast 199 Offer -->
+          <div id="scene3" class="reel-scene absolute inset-0 flex flex-col justify-center items-center p-6 text-center z-20 bg-gradient-to-b from-cyan-950/80 via-slate-950 to-slate-950 hidden transition-opacity duration-300">
+            
+            <div class="w-20 h-20 rounded-2xl overflow-hidden p-1 bg-gradient-to-tr from-cyan-400 to-blue-600 mb-3 anim-glow">
+              <img src="logo.jpg" class="w-full h-full object-cover rounded-xl">
+            </div>
+
+            <div class="font-reel font-extrabold text-3xl text-white tracking-wide mb-1">
+              WebFast <span class="text-cyan-400">199</span>
+            </div>
+            <p class="text-xs text-cyan-300 mb-4">บริการทำ Landing Page หน้าเดียวสำหรับยิงแอดโดยเฉพาะ</p>
+
+            <!-- Price Explosion Badge -->
+            <div class="reel-sticker-yellow font-reel font-black text-3xl sm:text-4xl px-6 py-3 rounded-3xl transform -rotate-3 anim-pop shadow-2xl mb-4">
+              แค่ 199 บาท!! 💥
+            </div>
+
+            <div class="bg-black/60 px-4 py-1.5 rounded-full border border-cyan-500/40 text-xs text-cyan-300 font-mono">
+              ฟังไม่ผิด ร้อยเก้าสิบเก้าบาท!
+            </div>
+          </div>
+
+          <!-- SCENE 4: (0:25 - 0:38) Features & Ad Ready -->
+          <div id="scene4" class="reel-scene absolute inset-0 flex flex-col justify-center items-center p-5 text-center z-20 bg-gradient-to-b from-indigo-950/80 via-slate-950 to-slate-950 hidden transition-opacity duration-300">
+            
+            <div class="flex gap-2 mb-3">
+              <span class="reel-sticker-cyan font-reel font-bold text-lg px-3 py-1 rounded-xl">
+                รองรับมือถือ 📱
+              </span>
+              <span class="reel-sticker-green font-reel font-bold text-lg px-3 py-1 rounded-xl">
+                พร้อมยิงแอด 🚀
+              </span>
+            </div>
+
+            <!-- Responsive graphic preview -->
+            <div class="w-full rounded-xl overflow-hidden border border-cyan-400/40 shadow-xl mb-4">
+              <img src="responsive-showcase.jpg" class="w-full h-auto object-cover">
+            </div>
+
+            <!-- 3 Key Features Tag pills -->
+            <div class="flex flex-col gap-2 w-full max-w-xs text-xs">
+              <div class="bg-slate-900/90 border border-slate-700 px-3 py-1.5 rounded-lg flex items-center justify-between text-white font-medium">
+                <span>⚡ โหลดไว 0.8 วิ</span>
+                <span class="text-emerald-400 font-bold">100% Mobile</span>
+              </div>
+              <div class="bg-slate-900/90 border border-slate-700 px-3 py-1.5 rounded-lg flex items-center justify-between text-white font-medium">
+                <span>📞 ปุ่มโทร & ปุ่ม LINE ทันใจ</span>
+                <span class="text-cyan-400 font-bold">One-Click</span>
+              </div>
+              <div class="bg-slate-900/90 border border-slate-700 px-3 py-1.5 rounded-lg flex items-center justify-between text-white font-medium">
+                <span>🎯 ยิงแอด Facebook & TikTok</span>
+                <span class="text-purple-400 font-bold">Pixel Ready</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- SCENE 5: (0:38 - 0:50) Urgent CTA -->
+          <div id="scene5" class="reel-scene absolute inset-0 flex flex-col justify-center items-center p-6 text-center z-20 bg-gradient-to-b from-amber-950/80 via-slate-950 to-slate-950 hidden transition-opacity duration-300">
+            
+            <div class="reel-sticker-red font-reel font-black text-2xl px-5 py-2 rounded-2xl mb-4 anim-bounce">
+              ทักด่วน! รับวันละ 3 คิว 🔥
+            </div>
+
+            <div class="w-16 h-16 rounded-full bg-amber-500/20 text-amber-300 border-2 border-amber-400 flex items-center justify-center mb-4">
+              <i data-lucide="hand-metal" class="w-8 h-8"></i>
+            </div>
+
+            <!-- Link Highlight Box -->
+            <div class="bg-slate-900 p-4 rounded-2xl border-2 border-cyan-400 w-full max-w-xs shadow-2xl mb-4">
+              <span class="text-[11px] text-slate-400 block mb-1">คลิกลิงก์เข้าชมหน้าเว็บได้เลย:</span>
+              <div class="font-mono font-bold text-sm text-cyan-300 bg-black/60 px-3 py-2 rounded-lg border border-cyan-500/30 break-all">
+                🔗 onedayweb.seikouedu.com
+              </div>
+              <span class="text-[10px] text-amber-400 font-semibold mt-2 block">หรือทักเพจ: onedayweb2026</span>
+            </div>
+
+          </div>
+
+          <!-- SCENE 6: (0:50 - 1:00) Outro & Direct Phone -->
+          <div id="scene6" class="reel-scene absolute inset-0 flex flex-col justify-center items-center p-6 text-center z-20 bg-gradient-to-b from-blue-950/90 via-slate-950 to-slate-950 hidden transition-opacity duration-300">
+            
+            <div class="reel-sticker-cyan font-reel font-black text-2xl px-5 py-2 rounded-2xl mb-4 anim-pop">
+              กดไลก์ & แชร์ 📌
+            </div>
+
+            <div class="w-20 h-20 rounded-2xl overflow-hidden p-1 bg-gradient-to-tr from-cyan-400 to-blue-600 mb-3 shadow-2xl">
+              <img src="logo.jpg" class="w-full h-full object-cover rounded-xl">
+            </div>
+
+            <div class="reel-sticker-yellow font-reel font-black text-2xl px-6 py-2.5 rounded-2xl mb-4 anim-bounce">
+              📞 086-932-3838
+            </div>
+
+            <p class="text-xs text-slate-300 max-w-xs leading-relaxed">
+              ชอบไอเดียนี้ บันทึกเก็บไว้เลย!<br>สนใจทำเว็บด่วน 1 วันเสร็จ ทักแชททันทีครับ!
+            </p>
+          </div>
+
+          <!-- Bottom Voiceover & Subtitle Bar (In-video Subtitles) -->
+          <div class="relative z-30 pb-6 px-4">
+            <div class="bg-black/85 backdrop-blur-md rounded-2xl p-3 border border-white/20 shadow-2xl text-center">
+              <span class="text-[10px] uppercase font-bold text-cyan-400 tracking-wider block mb-0.5">
+                VOICEOVER SUBTITLE (เสียงพากย์)
+              </span>
+              <p id="voiceoverText" class="font-reel font-semibold text-sm sm:text-base text-yellow-300 leading-snug">
+                "ยิงแอดวันละร้อย แต่คนทักถามแล้วเงียบ? รู้ไหมเพราะอะไร?"
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Playback Controls Bar -->
+      <div class="w-full max-w-md mt-4 p-3 bg-slate-900 border border-slate-800 rounded-2xl flex flex-col gap-2">
+        
+        <!-- Progress Scrubber -->
+        <div class="flex items-center gap-3">
+          <span id="currentTimeLabel" class="text-xs font-mono text-cyan-400 w-10 text-right">00:00</span>
+          <input type="range" id="timeScrubber" min="0" max="60" value="0" step="0.5"
+                 class="w-full h-1.5 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-cyan-400">
+          <span class="text-xs font-mono text-slate-400 w-10">01:00</span>
+        </div>
+
+        <!-- Buttons Toolbar -->
+        <div class="flex items-center justify-between pt-1">
+          <div class="flex items-center gap-2">
+            <!-- Play / Pause -->
+            <button type="button" id="playBtn" onclick="togglePlay()" 
+                    class="px-4 py-2 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-bold text-xs flex items-center gap-1.5 shadow-md active:scale-95 transition-all">
+              <i data-lucide="play" id="playIcon" class="w-4 h-4 fill-white"></i>
+              <span id="playLabel">เล่นคลิป (Play)</span>
+            </button>
+
+            <!-- Restart -->
+            <button type="button" onclick="resetPlay()" 
+                    class="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs">
+              <i data-lucide="rotate-ccw" class="w-4 h-4"></i>
+            </button>
+          </div>
+
+          <!-- Voiceover Audio Toggle -->
+          <button type="button" id="voiceToggleBtn" onclick="toggleVoice()"
+                  class="px-3 py-1.5 rounded-xl border border-slate-700 bg-slate-800/80 text-xs font-medium text-slate-200 flex items-center gap-1.5 hover:border-cyan-500">
+            <i data-lucide="volume-2" id="voiceIcon" class="w-3.5 h-3.5 text-cyan-400"></i>
+            <span id="voiceLabel">เปิดเสียงพากย์ไทย</span>
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- RIGHT: SCENE SCRIPT & PRODUCTION GUIDE -->
+    <div class="lg:col-span-6 space-y-4">
+      
+      <!-- Export Video Card -->
+      <div class="bg-gradient-to-br from-blue-950/60 to-slate-900 border border-blue-500/40 rounded-2xl p-5 shadow-xl">
+        <div class="flex items-center justify-between gap-3 mb-3">
+          <div class="flex items-center gap-2.5">
+            <div class="w-9 h-9 rounded-xl bg-blue-600/30 text-cyan-400 flex items-center justify-center font-bold">
+              <i data-lucide="video" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="font-reel font-bold text-base text-white">บันทึกเป็นไฟล์วิดีโอ (Export Video)</h3>
+              <p class="text-xs text-slate-400">เรคคอร์ดเป็นไฟล์วิดีโอ 9:16 สำหรับโพสต์ Facebook / TikTok Reels ทันที</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-2.5">
+          <button type="button" onclick="recordAndExportVideo()" id="exportBtn"
+                  class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-lg shadow-emerald-900/30 active:scale-95 transition-all">
+            <i data-lucide="download" class="w-4 h-4"></i>
+            <span id="exportLabel">เรคคอร์ด & ดาวน์โหลดวิดีโอ (60s Reel)</span>
+          </button>
+        </div>
+        <div id="exportStatus" class="text-[11px] text-cyan-300 mt-2 text-center hidden">
+          กำลังบันทึกวิดีโอ... กรุณารอสักครู่ (0/60s)
+        </div>
+      </div>
+
+      <!-- Script Breakdown Timeline (Interactive - Click to Jump) -->
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5">
+        <h3 class="font-reel font-bold text-base text-white mb-3 flex items-center gap-2">
+          <i data-lucide="film" class="w-4 h-4 text-cyan-400"></i>
+          <span>ไทม์ไลน์สคริปต์ 6 ช่วงเวลา (คลิกเพื่อดูแต่ละฉาก):</span>
+        </h3>
+
+        <div class="space-y-2.5 text-xs">
+          
+          <!-- Scene 1 Item -->
+          <div onclick="jumpTo(0)" class="scene-item p-3 rounded-xl bg-slate-950/80 border border-slate-800 hover:border-cyan-500/50 cursor-pointer transition-all flex items-start gap-3">
+            <span class="px-2 py-0.5 rounded bg-red-500/20 text-red-400 font-mono font-bold shrink-0">0:00 - 0:05</span>
+            <div>
+              <strong class="text-white block">ฉากที่ 1: Hook หยุดคนดู (ความเจ็บปวด)</strong>
+              <p class="text-slate-400">"ยิงแอดวันละร้อย แต่คนทักถามแล้วเงียบ? รู้ไหมเพราะอะไร?"</p>
+            </div>
+          </div>
+
+          <!-- Scene 2 Item -->
+          <div onclick="jumpTo(5)" class="scene-item p-3 rounded-xl bg-slate-950/80 border border-slate-800 hover:border-cyan-500/50 cursor-pointer transition-all flex items-start gap-3">
+            <span class="px-2 py-0.5 rounded bg-blue-500/20 text-blue-400 font-mono font-bold shrink-0">0:05 - 0:12</span>
+            <div>
+              <strong class="text-white block">ฉากที่ 2: เผยทางออกไม่ต้องจ่ายเป็นหมื่น</strong>
+              <p class="text-slate-400">"เพราะคุณไม่มี Landing Page คอยตอบคำถามและปิดการขายไง! ไม่ต้องจ่ายเป็นหมื่น 1 วันเสร็จ!"</p>
+            </div>
+          </div>
+
+          <!-- Scene 3 Item -->
+          <div onclick="jumpTo(12)" class="scene-item p-3 rounded-xl bg-slate-950/80 border border-slate-800 hover:border-cyan-500/50 cursor-pointer transition-all flex items-start gap-3">
+            <span class="px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-400 font-mono font-bold shrink-0">0:12 - 0:25</span>
+            <div>
+              <strong class="text-white block">ฉากที่ 3: เปิดตัว WebFast 199 บาท!</strong>
+              <p class="text-slate-400">"นี่เลย! WebFast 199 บริการทำ Landing Page หน้าเดียวสำหรับขายของ แค่ 199 บาท ฟังไม่ผิด!"</p>
+            </div>
+          </div>
+
+          <!-- Scene 4 Item -->
+          <div onclick="jumpTo(25)" class="scene-item p-3 rounded-xl bg-slate-950/80 border border-slate-800 hover:border-cyan-500/50 cursor-pointer transition-all flex items-start gap-3">
+            <span class="px-2 py-0.5 rounded bg-purple-500/20 text-purple-400 font-mono font-bold shrink-0">0:25 - 0:38</span>
+            <div>
+              <strong class="text-white block">ฉากที่ 4: จุดเด่น รองรับมือถือ & พร้อมยิงแอด</strong>
+              <p class="text-slate-400">"ได้เว็บสวย โหลดไว รองรับมือถือ 100% มีปุ่มโทร ปุ่มไลน์ครบ เอาไปยิงแอด Facebook, TikTok ได้เลย!"</p>
+            </div>
+          </div>
+
+          <!-- Scene 5 Item -->
+          <div onclick="jumpTo(38)" class="scene-item p-3 rounded-xl bg-slate-950/80 border border-slate-800 hover:border-cyan-500/50 cursor-pointer transition-all flex items-start gap-3">
+            <span class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-400 font-mono font-bold shrink-0">0:38 - 0:50</span>
+            <div>
+              <strong class="text-white block">ฉากที่ 5: กระตุ้นด่วน รับแค่วันละ 3 คิว</strong>
+              <p class="text-slate-400">"อยากได้เว็บขายดีแบบนี้ ทักแชทเพจ onedayweb2026 หรือคลิกลิงก์ onedayweb.seikouedu.com รับแค่วันละ 3 คิว!"</p>
+            </div>
+          </div>
+
+          <!-- Scene 6 Item -->
+          <div onclick="jumpTo(50)" class="scene-item p-3 rounded-xl bg-slate-950/80 border border-slate-800 hover:border-cyan-500/50 cursor-pointer transition-all flex items-start gap-3">
+            <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-mono font-bold shrink-0">0:50 - 1:00</span>
+            <div>
+              <strong class="text-white block">ฉากที่ 6: Call To Action & เบอร์โทร</strong>
+              <p class="text-slate-400">"ชอบไอเดียนี้ กดไลก์ กดแชร์เก็บไว้เลย! สนใจทักแชทด่วน หรือโทร 086-932-3838 ครับ!"</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Creator Shooting Tips Box -->
+      <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-4 text-xs text-slate-300">
+        <h4 class="font-bold text-white flex items-center gap-1.5 mb-1.5 text-sm">
+          <i data-lucide="lightbulb" class="w-4 h-4 text-amber-400"></i>
+          <span>เทคนิคการถ่ายคลิปด้วยมือถือจริง (หากต้องการอัดคลิปตัวเอง):</span>
+        </h4>
+        <ul class="list-disc pl-5 space-y-1 text-slate-400 text-[11px]">
+          <li><strong>0-3 วินาทีแรก:</strong> ให้ทำหน้าปวดหัว กุมขมับ ถือโทรศัพท์ หรือชี้กล้องแบบกระแทกอารมณ์เพื่อหยุดนิ้วโป้งคนดู</li>
+          <li><strong>จังหวะพูด 199 บาท:</strong> พูดเน้นเสียงดังฟังชัด "ร้อย-เก้า-สิบ-เก้า-บาท!" จะสร้างความตกใจและสนใจทันที</li>
+          <li><strong>B-Roll:</strong> สลับภาพหน้าจอเว็บ onedayweb.seikouedu.com ให้เห็นความสวยงามจริง</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Hidden Canvas for Video Export -->
+  <canvas id="exportCanvas" width="720" height="1280" class="hidden"></canvas>
+
+  <!-- ========================================== -->
+  <!-- JAVASCRIPT LOGIC                           -->
+  <!-- ========================================== -->
+  <script>
+    lucide.createIcons();
+
+    // Script definitions with exact timings
+    const scriptScenes = [
+      {
+        start: 0,
+        end: 5,
+        sceneId: 'scene1',
+        subtitle: '"ยิงแอดวันละร้อย แต่คนทักถามแล้วเงียบ? รู้ไหมเพราะอะไร?"',
+        voiceText: 'ยิงแอดวันละร้อย แต่คนทักถามแล้วเงียบ รู้ไหมเพราะอะไร'
+      },
+      {
+        start: 5,
+        end: 12,
+        sceneId: 'scene2',
+        subtitle: '"เพราะคุณไม่มี Landing Page คอยตอบคำถามและปิดการขายไง! แต่จะไปจ้างเป็นหมื่นทำไม? ในเมื่อที่นี่ 1 วันเสร็จ!"',
+        voiceText: 'เพราะคุณไม่มี แลนดิ้งเพจ คอยตอบคำถามและปิดการขายไง แต่จะไปจ้างเป็นหมื่นทำไม ในเมื่อที่นี่ หนึ่งวันเสร็จ'
+      },
+      {
+        start: 12,
+        end: 25,
+        sceneId: 'scene3',
+        subtitle: '"นี่เลย! WebFast 199 บริการทำ Landing Page หน้าเดียวสำหรับขายของและยิงแอดโดยเฉพาะ! ราคาแค่ 199 บาท! ฟังไม่ผิดร้อยเก้าสิบเก้าบาท!"',
+        voiceText: 'นี่เลย เว็บฟาสต์ หนึ่งเก้าเก้า บริการทำ แลนดิ้งเพจ หน้าเดียวสำหรับขายของและยิงแอดโดยเฉพาะ ราคาแค่ หนึ่งร้อยเก้าสิบเก้าบาท ฟังไม่ผิด ร้อยเก้าสิบเก้าบาท'
+      },
+      {
+        start: 25,
+        end: 38,
+        sceneId: 'scene4',
+        subtitle: '"ได้เว็บสวย โหลดไว รองรับมือถือ 100% มีปุ่มโทร ปุ่มไลน์ครบ เอาไปยิงแอด Facebook, TikTok ได้เลยทันที!"',
+        voiceText: 'ได้เว็บสวย โหลดไว รองรับมือถือหนึ่งร้อยเปอร์เซ็นต์ มีปุ่มโทร ปุ่มไลน์ครบ เอาไปยิงแอด เฟซบุ๊ก ติ๊กต็อก ได้เลยทันที'
+      },
+      {
+        start: 38,
+        end: 50,
+        sceneId: 'scene5',
+        subtitle: '"อยากได้เว็บขายดีแบบนี้ ทักแชทเพจ onedayweb2026 หรือกดลิงก์ onedayweb.seikouedu.com ด้านล่างได้เลย! แอบกระซิบ...รับแค่วันละ 3 คิวนะ!"',
+        voiceText: 'อยากได้เว็บขายดีแบบนี้ ทักแชทเพจ onedayweb2026 หรือกดลิงก์ onedayweb.seikouedu.com ด้านล่างได้เลย แอบกระซิบ รับแค่วันละ สามคิวนะ'
+      },
+      {
+        start: 50,
+        end: 60,
+        sceneId: 'scene6',
+        subtitle: '"ชอบไอเดียนี้ กดไลก์ กดแชร์เก็บไว้เลย! สนใจทักแชทด่วน หรือโทร 0869323838 ครับ!"',
+        voiceText: 'ชอบไอเดียนี้ กดไลก์ กดแชร์เก็บไว้เลย สนใจทักแชทด่วน หรือโทร ศูนย์แปดหก เก้าสามสอง สามแปดสามแปด ครับ'
+      }
+    ];
+
+    let currentTime = 0;
+    let isPlaying = false;
+    let playInterval = null;
+    let voiceEnabled = true;
+    let lastSpokenScene = -1;
+
+    const timeScrubber = document.getElementById('timeScrubber');
+    const currentTimeLabel = document.getElementById('currentTimeLabel');
+    const voiceoverText = document.getElementById('voiceoverText');
+    const playIcon = document.getElementById('playIcon');
+    const playLabel = document.getElementById('playLabel');
+
+    // Update Display based on time
+    function updateScene(time) {
+      const activeScene = scriptScenes.find(s => time >= s.start && time < s.end) || scriptScenes[scriptScenes.length - 1];
+      
+      // Toggle scenes
+      scriptScenes.forEach(s => {
+        const el = document.getElementById(s.sceneId);
+        if (s.sceneId === activeScene.sceneId) {
+          el.classList.remove('hidden');
+        } else {
+          el.classList.add('hidden');
+        }
+      });
+
+      // Update subtitle text
+      voiceoverText.textContent = activeScene.subtitle;
+
+      // Update time label
+      const mins = Math.floor(time / 60).toString().padStart(2, '0');
+      const secs = Math.floor(time % 60).toString().padStart(2, '0');
+      currentTimeLabel.textContent = `${mins}:${secs}`;
+      timeScrubber.value = time;
+
+      // Trigger Thai TTS voiceover if entering new scene
+      const sceneIndex = scriptScenes.indexOf(activeScene);
+      if (isPlaying && voiceEnabled && sceneIndex !== lastSpokenScene) {
+        lastSpokenScene = sceneIndex;
+        speakThai(activeScene.voiceText);
+      }
+    }
+
+    // Toggle Play/Pause
+    function togglePlay() {
+      if (isPlaying) {
+        pausePlay();
+      } else {
+        startPlay();
+      }
+    }
+
+    function startPlay() {
+      isPlaying = true;
+      playLabel.textContent = 'หยุดชั่วคราว (Pause)';
+      playIcon.setAttribute('data-lucide', 'pause');
+      lucide.createIcons();
+
+      if (currentTime >= 60) currentTime = 0;
+      lastSpokenScene = -1;
+
+      playInterval = setInterval(() => {
+        currentTime += 0.25;
+        if (currentTime >= 60) {
+          currentTime = 60;
+          pausePlay();
+        }
+        updateScene(currentTime);
+      }, 250);
+    }
+
+    function pausePlay() {
+      isPlaying = false;
+      playLabel.textContent = 'เล่นคลิป (Play)';
+      playIcon.setAttribute('data-lucide', 'play');
+      lucide.createIcons();
+      clearInterval(playInterval);
+      if (window.speechSynthesis) window.speechSynthesis.cancel();
+    }
+
+    function resetPlay() {
+      pausePlay();
+      currentTime = 0;
+      lastSpokenScene = -1;
+      updateScene(0);
+    }
+
+    function jumpTo(seconds) {
+      pausePlay();
+      currentTime = seconds;
+      lastSpokenScene = -1;
+      updateScene(currentTime);
+    }
+
+    timeScrubber.addEventListener('input', (e) => {
+      currentTime = parseFloat(e.target.value);
+      updateScene(currentTime);
+    });
+
+    // Thai Speech Synthesis (TTS)
+    function speakThai(text) {
+      if (!('speechSynthesis' in window)) return;
+      window.speechSynthesis.cancel();
+
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'th-TH';
+      utterance.rate = 1.05; // Slightly fast energetic pace for Reels
+
+      // Try selecting Thai voice if installed
+      const voices = window.speechSynthesis.getVoices();
+      const thaiVoice = voices.find(v => v.lang.includes('th') || v.name.includes('Thai'));
+      if (thaiVoice) utterance.voice = thaiVoice;
+
+      window.speechSynthesis.speak(utterance);
+    }
+
+    function toggleVoice() {
+      voiceEnabled = !voiceEnabled;
+      const label = document.getElementById('voiceLabel');
+      const icon = document.getElementById('voiceIcon');
+      if (voiceEnabled) {
+        label.textContent = 'เปิดเสียงพากย์ไทย';
+        icon.classList.remove('text-slate-500');
+        icon.classList.add('text-cyan-400');
+      } else {
+        label.textContent = 'ปิดเสียงพากย์';
+        icon.classList.remove('text-cyan-400');
+        icon.classList.add('text-slate-500');
+        if (window.speechSynthesis) window.speechSynthesis.cancel();
+      }
+    }
+
+    // ==========================================
+    // MediaRecorder Video Export to WebM / MP4
+    // ==========================================
+    async function recordAndExportVideo() {
+      const exportBtn = document.getElementById('exportBtn');
+      const exportLabel = document.getElementById('exportLabel');
+      const exportStatus = document.getElementById('exportStatus');
+
+      exportBtn.disabled = true;
+      exportStatus.classList.remove('hidden');
+      exportLabel.textContent = 'กำลังเรคคอร์ดวิดีโอ 9:16...';
+
+      const canvas = document.getElementById('exportCanvas');
+      const ctx = canvas.getContext('2d');
+
+      // Preload images
+      const hookImg = new Image();
+      hookImg.src = 'reel-scene1-hook.jpg';
+      const logoImg = new Image();
+      logoImg.src = 'logo.jpg';
+      const heroImg = new Image();
+      heroImg.src = 'hero-banner.jpg';
+      const multiImg = new Image();
+      multiImg.src = 'responsive-showcase.jpg';
+
+      await Promise.all([
+        new Promise(res => { hookImg.onload = res; hookImg.onerror = res; }),
+        new Promise(res => { logoImg.onload = res; logoImg.onerror = res; }),
+        new Promise(res => { heroImg.onload = res; heroImg.onerror = res; }),
+        new Promise(res => { multiImg.onload = res; multiImg.onerror = res; })
+      ]);
+
+      const stream = canvas.captureStream(30); // 30 fps
+      let mimeType = 'video/webm;codecs=vp9';
+      if (!MediaRecorder.isTypeSupported(mimeType)) {
+        mimeType = 'video/webm';
+      }
+
+      const recorder = new MediaRecorder(stream, { mimeType });
+      const chunks = [];
+
+      recorder.ondataavailable = e => { if (e.data.size > 0) chunks.push(e.data); };
+      recorder.onstop = () => {
+        const blob = new Blob(chunks, { type: 'video/webm' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'WebFast199-Reel-60s.webm';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+
+        exportBtn.disabled = false;
+        exportLabel.textContent = 'เรคคอร์ด & ดาวน์โหลดวิดีโอ (60s Reel)';
+        exportStatus.textContent = 'ดาวน์โหลดไฟล์วิดีโอเสร็จเรียบร้อยแล้ว!';
+      };
+
+      recorder.start();
+
+      // Render 60 seconds at accelerated simulation or real time (15 seconds total recording)
+      let recordTime = 0;
+      const totalSteps = 60;
+      const stepDuration = 250; // recorded fast in 15 seconds
+
+      const recordTimer = setInterval(() => {
+        renderCanvasFrame(ctx, canvas.width, canvas.height, recordTime, hookImg, logoImg, heroImg, multiImg);
+        exportStatus.textContent = `กำลังเรคคอร์ดวิดีโอ... (${Math.floor(recordTime)}/60 วินาที)`;
+        
+        recordTime += 1;
+        if (recordTime > totalSteps) {
+          clearInterval(recordTimer);
+          recorder.stop();
+        }
+      }, stepDuration);
+    }
+
+    // Draw video frame on 720x1280 canvas
+    function renderCanvasFrame(ctx, w, h, t, hook, logo, hero, multi) {
+      // Dark gradient background
+      const grad = ctx.createLinearGradient(0, 0, 0, h);
+      grad.addColorStop(0, '#0B0F19');
+      grad.addColorStop(0.5, '#0F172A');
+      grad.addColorStop(1, '#020617');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, w, h);
+
+      // Top Header
+      ctx.fillStyle = '#FFFFFF';
+      ctx.font = 'bold 24px Prompt';
+      ctx.fillText('⚡ onedayweb2026', 40, 80);
+
+      // Active scene data
+      const active = scriptScenes.find(s => t >= s.start && t < s.end) || scriptScenes[scriptScenes.length - 1];
+
+      // Draw Scene Content
+      if (t < 5) {
+        // Scene 1: Hook (Draw generated 3D illustration)
+        if (hook && hook.complete) {
+          ctx.drawImage(hook, 0, 0, w, h);
+          // Dark gradient overlay
+          const overlay = ctx.createLinearGradient(0, 0, 0, 450);
+          overlay.addColorStop(0, 'rgba(0,0,0,0.85)');
+          overlay.addColorStop(1, 'rgba(0,0,0,0)');
+          ctx.fillStyle = overlay;
+          ctx.fillRect(0, 0, w, 450);
+        }
+
+        ctx.fillStyle = '#EF4444';
+        roundRect(ctx, 60, 160, w - 120, 90, 20);
+        ctx.fillStyle = '#FFFFFF';
+        ctx.font = 'bold 36px Kanit';
+        ctx.textAlign = 'center';
+        ctx.fillText('"ยิงแอดแล้วเงียบ"', w / 2, 218);
+
+        ctx.fillStyle = '#FACC15';
+        roundRect(ctx, 100, 270, w - 200, 75, 16);
+        ctx.fillStyle = '#000000';
+        ctx.font = 'bold 30px Kanit';
+        ctx.fillText('เพราะไม่มีหน้าเว็บ? 🤔', w / 2, 318);
+
+        ctx.fillStyle = 'rgba(0,0,0,0.8)';
+        roundRect(ctx, 100, h - 340, w - 200, 60, 15);
+        ctx.fillStyle = '#F87171';
+        ctx.font = 'bold 22px Prompt';
+        ctx.fillText('❌ แอดแพง ลูกค้าทักแล้วหายเงียบ', w / 2, h - 302);
+      } else if (t < 12) {
+        // Scene 2: 1 Day Finished
+        ctx.fillStyle = '#DC2626';
+        roundRect(ctx, 80, 220, w - 160, 80, 20);
+        ctx.fillStyle = '#FFFFFF';
+        ctx.font = 'bold 34px Kanit';
+        ctx.textAlign = 'center';
+        ctx.fillText('ไม่ต้องจ่ายเป็นหมื่น! ❌', w / 2, 272);
+
+        ctx.fillStyle = '#FACC15';
+        roundRect(ctx, 100, 330, w - 200, 90, 20);
+        ctx.fillStyle = '#000000';
+        ctx.font = 'bold 42px Kanit';
+        ctx.fillText('เสร็จใน 1 วัน! ⚡', w / 2, 388);
+
+        if (hero.complete) {
+          ctx.drawImage(hero, 100, 480, w - 200, 360);
+        }
+      } else if (t < 25) {
+        // Scene 3: WebFast 199
+        if (logo.complete) {
+          ctx.drawImage(logo, (w - 140) / 2, 200, 140, 140);
+        }
+        ctx.fillStyle = '#FFFFFF';
+        ctx.font = 'bold 46px Kanit';
+        ctx.textAlign = 'center';
+        ctx.fillText('WebFast 199', w / 2, 390);
+
+        ctx.fillStyle = '#FACC15';
+        roundRect(ctx, 80, 440, w - 160, 100, 24);
+        ctx.fillStyle = '#000000';
+        ctx.font = 'black 50px Kanit';
+        ctx.fillText('แค่ 199 บาท!! 💥', w / 2, 510);
+
+        ctx.fillStyle = '#38BDF8';
+        ctx.font = '24px Prompt';
+        ctx.fillText('รับทำ Landing Page หน้าเดียวสำหรับยิงแอด', w / 2, 600);
+      } else if (t < 38) {
+        // Scene 4: Features
+        ctx.fillStyle = '#0284C7';
+        roundRect(ctx, 70, 180, w - 140, 75, 18);
+        ctx.fillStyle = '#FFFFFF';
+        ctx.font = 'bold 32px Kanit';
+        ctx.textAlign = 'center';
+        ctx.fillText('รองรับมือถือ 📱 พร้อมยิงแอด 🚀', w / 2, 228);
+
+        if (multi.complete) {
+          ctx.drawImage(multi, 80, 290, w - 160, 360);
+        }
+
+        ctx.fillStyle = '#10B981';
+        ctx.font = 'bold 24px Prompt';
+        ctx.fillText('✓ โหลดเร็ว 0.8 วิ • ติดพิกเซลครบ', w / 2, 720);
+      } else if (t < 50) {
+        // Scene 5: Urgent
+        ctx.fillStyle = '#DC2626';
+        roundRect(ctx, 80, 220, w - 160, 90, 20);
+        ctx.fillStyle = '#FFFFFF';
+        ctx.font = 'bold 38px Kanit';
+        ctx.textAlign = 'center';
+        ctx.fillText('ทักด่วน! รับวันละ 3 คิว 🔥', w / 2, 278);
+
+        ctx.fillStyle = '#1E293B';
+        roundRect(ctx, 60, 370, w - 120, 140, 20);
+        ctx.fillStyle = '#38BDF8';
+        ctx.font = 'bold 28px monospace';
+        ctx.fillText('onedayweb.seikouedu.com', w / 2, 450);
+
+        ctx.fillStyle = '#FACC15';
+        ctx.font = 'bold 24px Prompt';
+        ctx.fillText('ทักแชทเพจ: onedayweb2026', w / 2, 580);
+      } else {
+        // Scene 6: Contact & Phone
+        ctx.fillStyle = '#0284C7';
+        roundRect(ctx, 100, 200, w - 200, 80, 20);
+        ctx.fillStyle = '#FFFFFF';
+        ctx.font = 'bold 36px Kanit';
+        ctx.textAlign = 'center';
+        ctx.fillText('กดไลก์ & แชร์ 📌', w / 2, 252);
+
+        if (logo.complete) {
+          ctx.drawImage(logo, (w - 140) / 2, 320, 140, 140);
+        }
+
+        ctx.fillStyle = '#FACC15';
+        roundRect(ctx, 80, 500, w - 160, 90, 20);
+        ctx.fillStyle = '#000000';
+        ctx.font = 'bold 44px Kanit';
+        ctx.fillText('📞 086-932-3838', w / 2, 560);
+      }
+
+      // Draw Subtitle Box at Bottom
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.85)';
+      roundRect(ctx, 40, h - 220, w - 80, 140, 20);
+      ctx.fillStyle = '#FACC15';
+      ctx.font = 'bold 22px Kanit';
+      ctx.textAlign = 'center';
+      wrapText(ctx, active.subtitle, w / 2, h - 160, w - 120, 32);
+    }
+
+    function roundRect(ctx, x, y, width, height, radius) {
+      ctx.beginPath();
+      ctx.moveTo(x + radius, y);
+      ctx.lineTo(x + width - radius, y);
+      ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+      ctx.lineTo(x + width, y + height - radius);
+      ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+      ctx.lineTo(x + radius, y + height);
+      ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+      ctx.lineTo(x, y + radius);
+      ctx.quadraticCurveTo(x, y, x + radius, y);
+      ctx.closePath();
+      ctx.fill();
+    }
+
+    function wrapText(ctx, text, x, y, maxWidth, lineHeight) {
+      const words = text.split(' ');
+      let line = '';
+      for (let n = 0; n < words.length; n++) {
+        const testLine = line + words[n] + ' ';
+        const metrics = ctx.measureText(testLine);
+        const testWidth = metrics.width;
+        if (testWidth > maxWidth && n > 0) {
+          ctx.fillText(line, x, y);
+          line = words[n] + ' ';
+          y += lineHeight;
+        } else {
+          line = testLine;
+        }
+      }
+      ctx.fillText(line, x, y);
+    }
+
+    // Initial setup
+    updateScene(0);
+  </script>
+</body>
+</html>

@@ -1,0 +1,1422 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>WebFast 199 - รับทำ Landing Page หน้าเดียวเสร็จใน 1 วัน พร้อมยิงแอดสร้างยอดขายทันที</title>
+  
+  <!-- Meta SEO & Open Graph for Facebook & TikTok Ads -->
+  <meta name="description" content="รับทำ Landing Page หน้าเดียวเสร็จใน 24 ชม. สวย สดใส โหลดเร็ว 1 วินาที รองรับมือถือ 100% พร้อมติดพิกเซลยิงแอด Facebook & TikTok เริ่มต้นเพียง 199 บาท!">
+  <meta property="og:title" content="WebFast 199 - รับทำ Landing Page ด่วน 1 วัน ยิงแอดสร้างยอดขายทันที">
+  <meta property="og:description" content="ไม่ต้องจ่ายหลักหมื่น ไม่ต้องปวดหัวเขียนโค้ดเอง ได้เว็บสวย สดใส สไตล์มืออาชีพ โหลดไว รองรับมือถือ 100% พร้อมปุ่มโทร 086-932-3838 และเชื่อมต่อ Inbox เพจ Facebook ทันที">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="hero-banner.jpg">
+  <meta property="og:url" content="https://onedayweb.seikouedu.com/">
+  <meta name="theme-color" content="#2563EB">
+
+  <!-- Google Fonts: Prompt & Kanit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,400;0,500;0,600;0,700;1,700&family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;1,600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              blue: '#2563EB',
+              blueDark: '#1E40AF',
+              cyan: '#0284C7',
+              sky: '#0EA5E9',
+              green: '#10B981',
+              greenDark: '#059669',
+              orange: '#F59E0B'
+            }
+          },
+          fontFamily: {
+            sans: ['Prompt', 'sans-serif'],
+            display: ['Kanit', 'sans-serif']
+          },
+          animation: {
+            'float-slow': 'float 4s ease-in-out infinite',
+            'badge-pulse': 'badgePulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'ping-slow': 'ping 2s cubic-bezier(0, 0, 0.2, 1) infinite'
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-6px)' }
+            },
+            badgePulse: {
+              '0%, 100%': { opacity: '1' },
+              '50%': { opacity: '.75' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    body {
+      font-family: 'Prompt', sans-serif;
+      background-color: #F8FAFC;
+      color: #1E293B;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, .font-heading {
+      font-family: 'Kanit', sans-serif;
+    }
+    .hero-mesh-bg {
+      background: radial-gradient(at 10% 20%, rgba(219, 234, 254, 0.7) 0px, transparent 50%),
+                  radial-gradient(at 90% 10%, rgba(224, 242, 254, 0.8) 0px, transparent 50%),
+                  radial-gradient(at 50% 80%, rgba(240, 253, 250, 0.8) 0px, transparent 50%),
+                  #FFFFFF;
+    }
+    .white-card {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.04), 0 8px 10px -6px rgba(15, 23, 42, 0.02);
+    }
+    .white-card-hover:hover {
+      border-color: #93C5FD;
+      box-shadow: 0 20px 30px -10px rgba(37, 99, 235, 0.12);
+      transform: translateY(-3px);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #1E40AF 0%, #2563EB 50%, #0284C7 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .btn-gradient {
+      background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+      box-shadow: 0 10px 20px -5px rgba(37, 99, 235, 0.35);
+    }
+    .btn-gradient:hover {
+      background: linear-gradient(135deg, #1D4ED8 0%, #1E40AF 100%);
+      box-shadow: 0 15px 25px -5px rgba(37, 99, 235, 0.45);
+    }
+    .btn-messenger {
+      background: linear-gradient(135deg, #0084FF 0%, #0066FF 50%, #00C6FF 100%);
+      box-shadow: 0 10px 25px -5px rgba(0, 132, 255, 0.45);
+    }
+    .btn-messenger:hover {
+      background: linear-gradient(135deg, #0070E0 0%, #0050D0 100%);
+      box-shadow: 0 15px 30px -5px rgba(0, 132, 255, 0.55);
+    }
+    .btn-call {
+      background: linear-gradient(135deg, #059669 0%, #10B981 100%);
+      box-shadow: 0 10px 20px -5px rgba(16, 185, 129, 0.35);
+    }
+  </style>
+
+  <!-- ========================================== -->
+  <!-- 3. AD STRATEGY & TRACKING PREPARATION      -->
+  <!-- ========================================== -->
+  
+  <!-- Meta Pixel Code Placeholder -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    
+    // Pixel Initialization & PageView Event
+    if (typeof fbq === 'function') {
+      fbq('init', 'YOUR_META_PIXEL_ID_HERE');
+      fbq('track', 'PageView');
+    }
+  </script>
+</head>
+
+<body class="bg-[#F8FAFC] text-slate-800 antialiased selection:bg-blue-500 selection:text-white">
+
+  <!-- ========================================== -->
+  <!-- TOP ANNOUNCEMENT BAR (Fresh & Urgent)      -->
+  <!-- ========================================== -->
+  <div class="bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-600 text-white text-xs md:text-sm py-2 px-3 text-center flex items-center justify-center gap-2 font-medium sticky top-0 z-50 shadow-sm">
+    <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-bold bg-amber-300 text-slate-900 animate-badge-pulse shadow-sm">
+      ⚡ โปรโมชั่นพิเศษวันนี้!
+    </span>
+    <span>รับทำเว็บหน้าเดียวราคา 199.- วันนี้เหลือเพียง <strong class="text-amber-200 text-sm underline decoration-amber-300">3 คิวสุดท้าย</strong> เพื่อรักษาคุณภาพส่งงานใน 24 ชม.</span>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- NAVIGATION / HEADER (Bright & Professional) -->
+  <!-- ========================================== -->
+  <header class="border-b border-slate-200/80 bg-white/95 backdrop-blur-md sticky top-9 z-40 shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-3 group focus:outline-none">
+        <div class="relative w-11 h-11 rounded-xl overflow-hidden p-0.5 bg-gradient-to-tr from-blue-600 to-cyan-500 shadow-md shadow-blue-500/20 group-hover:scale-105 transition-all duration-300">
+          <img src="logo.jpg" alt="WebFast 199 Logo" class="w-full h-full object-cover rounded-[10px]" onerror="this.src='Gemini_Generated_Image_yxhnl9yxhnl9yxhn.jpg'">
+        </div>
+
+        <div class="flex flex-col">
+          <div class="flex items-center gap-1.5">
+            <span class="font-display font-bold text-xl tracking-tight text-slate-900 group-hover:text-blue-600 transition-colors">
+              WebFast<span class="text-blue-600">199</span>
+            </span>
+            <span class="text-[10px] uppercase font-bold tracking-wider px-1.5 py-0.2 bg-blue-100 text-blue-700 border border-blue-200 rounded">
+              24h
+            </span>
+          </div>
+          <span class="text-[11px] text-slate-500 -mt-1 font-normal hidden sm:inline">รับทำ Landing Page หน้าเดียวเสร็จใน 1 วัน</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-6 text-sm text-slate-600 font-medium">
+        <a href="#why-us" class="hover:text-blue-600 transition-colors">ทำไมต้องมีเว็บ?</a>
+        <a href="#pricing" class="hover:text-blue-600 transition-colors">แพ็กเกจ 199.-</a>
+        <a href="#samples" class="hover:text-blue-600 transition-colors">ตัวอย่างผลงาน</a>
+        <a href="#process" class="hover:text-blue-600 transition-colors">ขั้นตอนการสั่ง</a>
+        <a href="#faq" class="hover:text-blue-600 transition-colors">คำถามที่พบบ่อย</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- Direct Call Link (Updated with 0869323838) -->
+        <a href="tel:0869323838" 
+           onclick="trackEvent('Contact', { type: 'Header_Call', number: '0869323838' })" 
+           class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-300 bg-slate-50 text-xs font-semibold text-slate-700 hover:border-blue-500 hover:text-blue-600 transition-all">
+          <i data-lucide="phone-call" class="w-3.5 h-3.5 text-blue-600"></i>
+          <span>โทร: 086-932-3838</span>
+        </a>
+
+        <!-- Fast Order Button (Opens High Converting Action Modal) -->
+        <button type="button" onclick="openActionModal()"
+                class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-white btn-gradient active:scale-95 transition-all cursor-pointer">
+          <i data-lucide="zap" class="w-4 h-4 fill-amber-300 text-amber-300"></i>
+          <span>สั่งทำเว็บ 199.-</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ========================================== -->
+  <!-- SECTION 1: HERO SECTION                    -->
+  <!-- ========================================== -->
+  <section class="relative pt-10 pb-16 md:pt-16 md:pb-24 overflow-hidden hero-mesh-bg border-b border-slate-200">
+    
+    <div class="max-w-5xl mx-auto px-4 relative z-10 text-center">
+      
+      <!-- Tagline Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs sm:text-sm font-semibold mb-6 shadow-sm animate-float-slow">
+        <span class="flex h-2 w-2 relative">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-500 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-600"></span>
+        </span>
+        <span>⚡ ส่งงานไวภายใน 24 ชม. | ราคาเริ่มต้นเพียง 199 บาท</span>
+      </div>
+
+      <!-- Main Heading -->
+      <h1 class="font-display font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-slate-900 tracking-tight leading-[1.25] mb-5">
+        รับทำ <span class="gradient-text">Landing Page หน้าเดียว</span><br class="hidden sm:inline">
+        เสร็จใน 1 วัน พร้อมยิงแอดสร้างยอดขายทันที
+      </h1>
+
+      <!-- Sub-heading -->
+      <p class="text-slate-600 text-base sm:text-lg md:text-xl font-normal max-w-3xl mx-auto mb-8 leading-relaxed">
+        ไม่ต้องจ่ายหลักหมื่น ไม่ต้องปวดหัวเขียนโค้ดเอง ได้เว็บสวย สไตล์ทันสมัย โหลดไว รองรับมือถือ 100% 
+        พร้อมปุ่มโทรด่วนและเชื่อมต่อ Facebook Inbox ทันที ปิดการขายง่าย เพิ่ม ROAS ให้แคมเปญโฆษณาของคุณ
+      </p>
+
+      <!-- Primary CTA Actions -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 mb-12 max-w-md mx-auto sm:max-w-none">
+        
+        <!-- Primary Direct Messenger Action Button (Opens Action Pop-up) -->
+        <button type="button" onclick="openActionModal()"
+           class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl font-display font-semibold text-base sm:text-lg text-white btn-messenger hover:scale-[1.02] active:scale-95 transition-all duration-200 shadow-xl cursor-pointer">
+          <i data-lucide="message-circle" class="w-5 h-5 fill-white text-white"></i>
+          <span>ทักแชทสั่งทำเว็บด่วน 199.- (เปิด Inbox ทันที)</span>
+        </button>
+
+        <!-- Direct Phone Call Button -->
+        <a href="tel:0869323838" 
+           onclick="trackEvent('Contact', { type: 'Hero_Direct_Call', number: '0869323838' })"
+           class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl font-medium text-sm sm:text-base text-slate-700 bg-white hover:bg-slate-50 border border-slate-300 hover:border-slate-400 active:scale-95 transition-all shadow-sm">
+          <i data-lucide="phone-call" class="w-4 h-4 text-emerald-600"></i>
+          <span>โทรสายตรง: 086-932-3838</span>
+        </a>
+
+      </div>
+
+      <!-- Trust Elements Bar -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 max-w-4xl mx-auto pt-4 pb-6 border-t border-slate-200 text-left">
+        
+        <div class="flex items-center gap-3 p-3 rounded-xl bg-white border border-slate-200/80 shadow-sm">
+          <div class="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center shrink-0">
+            <i data-lucide="clock" class="w-5 h-5 text-blue-600"></i>
+          </div>
+          <div>
+            <div class="text-xs text-slate-500">ระยะเวลาจัดทำ</div>
+            <div class="text-xs sm:text-sm font-bold text-slate-900">ส่งงานใน 24 ชม.</div>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3 p-3 rounded-xl bg-white border border-slate-200/80 shadow-sm">
+          <div class="w-10 h-10 rounded-xl bg-indigo-50 border border-indigo-200 flex items-center justify-center shrink-0">
+            <i data-lucide="smartphone" class="w-5 h-5 text-indigo-600"></i>
+          </div>
+          <div>
+            <div class="text-xs text-slate-500">การแสดงผล</div>
+            <div class="text-xs sm:text-sm font-bold text-slate-900">รองรับมือถือ 100%</div>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3 p-3 rounded-xl bg-white border border-slate-200/80 shadow-sm">
+          <div class="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center shrink-0">
+            <i data-lucide="gauge" class="w-5 h-5 text-emerald-600"></i>
+          </div>
+          <div>
+            <div class="text-xs text-slate-500">ความเร็วในการโหลด</div>
+            <div class="text-xs sm:text-sm font-bold text-slate-900">เร็วแรง ~0.8 วินาที</div>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3 p-3 rounded-xl bg-white border border-slate-200/80 shadow-sm">
+          <div class="w-10 h-10 rounded-xl bg-purple-50 border border-purple-200 flex items-center justify-center shrink-0">
+            <i data-lucide="target" class="w-5 h-5 text-purple-600"></i>
+          </div>
+          <div>
+            <div class="text-xs text-slate-500">พร้อมยิงโฆษณา</div>
+            <div class="text-xs sm:text-sm font-bold text-slate-900">ติดพิกเซล Facebook</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Hero Visual Showcase Presentation -->
+      <div class="mt-10 relative max-w-4xl mx-auto">
+        <div class="rounded-2xl p-2 sm:p-3 bg-white border-2 border-blue-200 shadow-2xl shadow-blue-500/10 relative overflow-hidden group">
+          
+          <!-- Mockup Browser Top Bar -->
+          <div class="flex items-center justify-between pb-2.5 px-3 border-b border-slate-200 text-xs text-slate-500 bg-slate-50/80 rounded-t-xl">
+            <div class="flex items-center gap-1.5">
+              <span class="w-3 h-3 rounded-full bg-red-400 inline-block"></span>
+              <span class="w-3 h-3 rounded-full bg-amber-400 inline-block"></span>
+              <span class="w-3 h-3 rounded-full bg-emerald-400 inline-block"></span>
+              <span class="ml-2 font-mono text-[11px] text-slate-600 hidden sm:inline">https://onedayweb.seikouedu.com</span>
+            </div>
+            <div class="flex items-center gap-1.5 text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200 text-[11px] font-medium">
+              <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-600"></i>
+              <span>SSL Secure & High Conversion Ready</span>
+            </div>
+          </div>
+
+          <!-- Hero Banner Image -->
+          <div class="relative rounded-xl overflow-hidden mt-2 bg-slate-900">
+            <img src="hero-banner.jpg" alt="WebFast 199 Landing Page Preview" 
+                 class="w-full h-auto object-cover rounded-xl transform group-hover:scale-[1.01] transition-transform duration-500"
+                 onerror="this.src='Gemini_Generated_Image_yxhnl9yxhnl9yxhn (1).jpg'">
+            
+            <!-- Live Badges on top -->
+            <div class="absolute bottom-3 left-3 sm:bottom-6 sm:left-6 flex flex-wrap gap-2">
+              <div class="bg-white/95 px-3.5 py-1.5 rounded-lg border border-slate-200 text-xs font-bold text-slate-800 flex items-center gap-2 shadow-lg backdrop-blur-md">
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
+                <span>Page Speed 99/100 โหลดเร็ว 0.8s</span>
+              </div>
+              <div class="bg-white/95 px-3.5 py-1.5 rounded-lg border border-slate-200 text-xs font-bold text-blue-700 flex items-center gap-1.5 shadow-lg backdrop-blur-md hidden sm:flex">
+                <i data-lucide="message-square" class="w-4 h-4 text-blue-600 fill-blue-600"></i>
+                <span>One-Click Facebook Inbox</span>
+              </div>
+            </div>
+
+            <div class="absolute top-3 right-3 sm:top-6 sm:right-6">
+              <div class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-xs sm:text-sm font-bold px-4 py-1.5 rounded-full shadow-xl">
+                เริ่มต้นเพียง 199.-
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- SECTION 2: PAIN POINTS & SOLUTION          -->
+  <!-- ========================================== -->
+  <section id="why-us" class="py-16 md:py-24 bg-white border-b border-slate-200">
+    <div class="max-w-5xl mx-auto px-4">
+      
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-xs font-bold uppercase tracking-wider text-blue-700 bg-blue-50 px-3.5 py-1 rounded-full border border-blue-200">
+          WHY YOU NEED A LANDING PAGE
+        </span>
+        <h2 class="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-slate-900 mt-3 mb-4">
+          ทำไมยิงแอดแล้ว "ไม่คุ้มทุน" ถ้าไม่มี Landing Page หน้าเดียว?
+        </h2>
+        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+          การยิงแอดตรงเข้าข้อความเพจ (Inbox) ทุกวันนี้ค่าทักแพง ลูกค้าถามแล้วเงียบ แอดมินตอบช้า 
+          เปลี่ยนมาใช้ Landing Page ที่ออกแบบมาเพื่อปิดการขายโดยเฉพาะ เพิ่มยอดสั่งซื้อได้ทันที
+        </p>
+      </div>
+
+      <!-- Problem vs Solution Comparison Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-stretch mb-12">
+        
+        <!-- Left: Pain Points ❌ -->
+        <div class="rounded-2xl p-6 sm:p-8 bg-red-50/70 border border-red-200 relative flex flex-col justify-between shadow-sm">
+          <div>
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-11 h-11 rounded-xl bg-red-100 border border-red-300 flex items-center justify-center text-red-600 font-bold">
+                <i data-lucide="x-circle" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <h3 class="font-display font-bold text-lg sm:text-xl text-red-900">
+                  ❌ ปัญหาเดิมที่คุณต้องเจอ
+                </h3>
+                <span class="text-xs text-red-600 font-medium">เสียเงินยิงแอดฟรี ลูกค้าหลุดลอย</span>
+              </div>
+            </div>
+
+            <ul class="space-y-4 text-sm text-slate-700">
+              <li class="flex items-start gap-3">
+                <i data-lucide="x" class="w-5 h-5 text-red-500 shrink-0 mt-0.5"></i>
+                <span><strong>ลูกค้าทักแชทแล้วไม่ซื้อ:</strong> ลูกค้าถามราคา ขอดูรีวิว แล้วเงียบหาย เสียเวลาแอดมินพิมพ์ตอบซ้ำๆ ทั้งวัน</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i data-lucide="x" class="w-5 h-5 text-red-500 shrink-0 mt-0.5"></i>
+                <span><strong>ตอบแชทไม่ทันใน 5 นาที:</strong> พอลูกค้าสนใจแต่ตอบช้า ลูกค้าก็เลื่อนผ่านไปซื้อร้านคู่แข่งทันที</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i data-lucide="x" class="w-5 h-5 text-red-500 shrink-0 mt-0.5"></i>
+                <span><strong>จ้างทำเว็บทั่วไปราคาหลักหมื่น:</strong> จ่ายเงินแพง รอนานเป็นเดือนๆ แก้ไขยาก ไม่เหมาะกับงานเร่งด่วน</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i data-lucide="x" class="w-5 h-5 text-red-500 shrink-0 mt-0.5"></i>
+                <span><strong>ติด Tracking พิกเซลไม่แม่นยำ:</strong> ยิงแอดผ่านโพสต์ Facebook ธรรมดา ไม่สามารถเก็บกลุ่ม Custom Audience หรือทำ Retargeting ได้</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-8 pt-4 border-t border-red-200 text-xs text-red-700 flex items-center gap-2 font-medium">
+            <i data-lucide="alert-triangle" class="w-4 h-4 text-red-600"></i>
+            <span>ผลลัพธ์: ค่าแอดพุ่งสูง ROAS ติดลบ เสียโอกาสขาย</span>
+          </div>
+        </div>
+
+        <!-- Right: WebFast 199 Solution ✅ -->
+        <div class="rounded-2xl p-6 sm:p-8 bg-gradient-to-b from-blue-50/90 to-emerald-50/70 border-2 border-blue-400 relative flex flex-col justify-between shadow-lg shadow-blue-500/10">
+          <div class="absolute -top-3.5 right-6 bg-gradient-to-r from-blue-600 to-emerald-600 text-white text-xs font-bold px-3.5 py-1 rounded-full shadow-md">
+            ทางออกที่คุ้มค่าที่สุด
+          </div>
+
+          <div>
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-11 h-11 rounded-xl bg-blue-100 border border-blue-300 flex items-center justify-center text-blue-700 font-bold">
+                <i data-lucide="check-circle-2" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <h3 class="font-display font-bold text-lg sm:text-xl text-slate-900">
+                  ✅ ทางออกของ WebFast 199
+                </h3>
+                <span class="text-xs text-blue-700 font-semibold">กระชับ จบในหน้าเดียว ปิดการขายออโต้</span>
+              </div>
+            </div>
+
+            <ul class="space-y-4 text-sm text-slate-800">
+              <li class="flex items-start gap-3">
+                <i data-lucide="check" class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5"></i>
+                <span><strong>หน้าเว็บกระชับ โหลดเร็ว 1 วินาที:</strong> ลูกค้าคลิกปุ๊บ หน้าเว็บเด้งทันที ไม่ต้องรอนาน ป้องกันลูกค้ากดออก</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i data-lucide="check" class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5"></i>
+                <span><strong>โครงสร้างปิดการขายในหน้าเดียว:</strong> เรียงลำดับจิตวิทยาการขาย ดึงดูดสายตา แจงโปรโมชั่น พร้อมปุ่มแอดไลน์/โทรสั่งซื้อทันที</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i data-lucide="check" class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5"></i>
+                <span><strong>ประหยัดเงิน เริ่มต้นเพียง 199 บาท:</strong> คุ้มค่าที่สุด ไม่มีข้อผูกมัด ได้งานด่วนเสร็จภายใน 24 ชม. ทันใจพ่อค้าแม่ค้า</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i data-lucide="check" class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5"></i>
+                <span><strong>รองรับการติดพิกเซลยิงแอดแม่นยำ:</strong> ติดตั้ง Meta Pixel / TikTok Pixel เก็บ Event Lead และ Contact ได้ครบ ยิง Conversion แม่นยำขึ้น</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-8 pt-4 border-t border-blue-200 text-xs text-blue-800 flex items-center justify-between font-semibold">
+            <span class="flex items-center gap-1.5">
+              <i data-lucide="trending-up" class="w-4 h-4 text-emerald-600"></i>
+              <span>ผลลัพธ์: ลูกค้าตัดสินใจซื้อง่ายขึ้น ค่าแอดถูกลงชัดเจน</span>
+            </span>
+            <a href="#pricing" class="underline hover:text-blue-900 font-bold">ดูแพ็กเกจ &rarr;</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Device Showcase Card -->
+      <div class="white-card rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-center gap-8 shadow-md">
+        <div class="md:w-1/2 rounded-xl overflow-hidden border border-slate-200 shadow-sm">
+          <img src="responsive-showcase.jpg" alt="Responsive Multi-device Showcase" class="w-full h-auto object-cover" onerror="this.src='Gemini_Generated_Image_yxhnl9yxhnl9yxhn (2).jpg'">
+        </div>
+        <div class="md:w-1/2 space-y-3.5">
+          <span class="text-xs font-bold text-blue-700 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
+            100% RESPONSIVE READY
+          </span>
+          <h3 class="font-display font-bold text-2xl text-slate-900 leading-snug">
+            สวย คมชัด บนทุกขนาดหน้าจอ ทั้งมือถือ แท็บเล็ต และคอมพิวเตอร์
+          </h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            เพราะกว่า 90% ของผู้ใช้งาน Facebook และ TikTok เข้าชมเว็บไซต์ผ่านมือถือ เราจึงพิถีพิถันในการปรับแต่งความเร็วและการจัดวางตัวอักษรให้อ่านง่าย สบายตา ปุ่มกดใหญ่ชัดเจน สั่งซื้อได้สะดวกไม่สะดุด
+          </p>
+          <div class="flex items-center gap-4 pt-2 text-xs font-semibold text-slate-700">
+            <span class="flex items-center gap-1.5"><i data-lucide="smartphone" class="w-4 h-4 text-blue-600"></i> Mobile First</span>
+            <span class="flex items-center gap-1.5"><i data-lucide="tablet" class="w-4 h-4 text-indigo-600"></i> Tablet Smooth</span>
+            <span class="flex items-center gap-1.5"><i data-lucide="laptop" class="w-4 h-4 text-cyan-600"></i> Desktop Clean</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- SECTION 3: PACKAGE PRICING & ADD-ONS       -->
+  <!-- ========================================== -->
+  <section id="pricing" class="py-16 md:py-24 bg-[#F8FAFC] border-b border-slate-200">
+    <div class="max-w-5xl mx-auto px-4">
+      
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-xs font-bold uppercase tracking-wider text-blue-700 bg-blue-50 px-3.5 py-1 rounded-full border border-blue-200">
+          CLEAR & HONEST PRICING
+        </span>
+        <h2 class="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-slate-900 mt-3 mb-3">
+          ราคาโปรโมชั่นพิเศษ ไม่มีค่าใช้จ่ายแอบแฝง
+        </h2>
+        <p class="text-slate-600 text-sm sm:text-base">
+          เลือกแพ็กเกจเริ่มต้นเพียง 199.- หรืออัปเกรดออปชันเสริมตามขนาดธุรกิจของคุณ
+        </p>
+      </div>
+
+      <!-- Pricing Layout: 1 Hero Featured Card + 2 Add-ons -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- MAIN STARTER CARD (Highlight 199.-) -->
+        <div class="lg:col-span-7 rounded-2xl bg-white border-2 border-blue-500 p-6 sm:p-8 relative shadow-xl shadow-blue-500/10">
+          
+          <!-- Top Badge -->
+          <div class="absolute -top-3.5 left-6 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider flex items-center gap-1.5 shadow-md">
+            <i data-lucide="flame" class="w-3.5 h-3.5 fill-amber-300 text-amber-300"></i>
+            <span>แพ็กเกจยอดนิยมอันดับ 1</span>
+          </div>
+
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-6 mb-6">
+            <div>
+              <h3 class="font-display font-bold text-2xl text-slate-900">Starter Fast 199.-</h3>
+              <p class="text-xs sm:text-sm text-blue-700 font-medium mt-1">เหมาะสำหรับ: พ่อค้าแม่ค้าออนไลน์, หน้าเซลเพจด่วน, ยิงแอดเปิดตัวสินค้า</p>
+            </div>
+            <div class="text-left sm:text-right">
+              <span class="text-xs text-slate-400 line-through">ปกติ 990 บาท</span>
+              <div class="flex items-baseline gap-1">
+                <span class="text-3xl sm:text-4xl font-display font-bold text-blue-600">199</span>
+                <span class="text-sm font-semibold text-slate-500">บาท / เว็บ</span>
+              </div>
+              <span class="text-[11px] text-emerald-600 font-bold">จ่ายครั้งเดียว จบงาน</span>
+            </div>
+          </div>
+
+          <!-- Feature List -->
+          <div class="space-y-3.5 mb-8">
+            <div class="text-xs font-bold text-slate-700 uppercase tracking-wider">สิ่งที่คุณจะได้รับในแพ็กเกจนี้:</div>
+            
+            <div class="flex items-start gap-3 text-sm text-slate-700">
+              <div class="w-5 h-5 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shrink-0 mt-0.5">
+                <i data-lucide="check" class="w-3.5 h-3.5"></i>
+              </div>
+              <span><strong>วางโครงสร้าง 1 หน้ามาตรฐาน Conversion สูง:</strong> ครบทั้ง Hero แบนเนอร์, จุดเด่นสินค้า, รูปภาพรีวิว, และช่องทางสั่งซื้อ</span>
+            </div>
+
+            <div class="flex items-start gap-3 text-sm text-slate-700">
+              <div class="w-5 h-5 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shrink-0 mt-0.5">
+                <i data-lucide="check" class="w-3.5 h-3.5"></i>
+              </div>
+              <span><strong>100% Mobile Friendly:</strong> ปรับแต่งการแสดงผลให้สวย คมชัด บนมือถือทุกรุ่น (ทั้ง iOS & Android)</span>
+            </div>
+
+            <div class="flex items-start gap-3 text-sm text-slate-700">
+              <div class="w-5 h-5 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shrink-0 mt-0.5">
+                <i data-lucide="check" class="w-3.5 h-3.5"></i>
+              </div>
+              <span><strong>ติดตั้งปุ่มโทร 086-932-3838 & ปุ่ม Inbox เพจ:</strong> ลูกค้ากดปุ๊บ โทรออกหรือเด้งเข้าแชทเพจทันที ไม่ต้องรอกดซ้ำ</span>
+            </div>
+
+            <div class="flex items-start gap-3 text-sm text-slate-700">
+              <div class="w-5 h-5 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shrink-0 mt-0.5">
+                <i data-lucide="check" class="w-3.5 h-3.5"></i>
+              </div>
+              <span><strong>ส่งมอบงานภายใน 24 ชม.:</strong> ส่งข้อมูล รูป และข้อความครบ เริ่มงานทันที ตรวจงานได้ใน 1 วัน</span>
+            </div>
+
+            <div class="flex items-start gap-3 text-sm text-slate-700">
+              <div class="w-5 h-5 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shrink-0 mt-0.5">
+                <i data-lucide="check" class="w-3.5 h-3.5"></i>
+              </div>
+              <span><strong>โฮสต์ไฟล์หน้าเว็บพร้อมเปิดใช้งาน:</strong> จัดส่งทั้งไฟล์ HTML หรือช่วยแนะนำช่องทางขึ้นเว็บทันที</span>
+            </div>
+          </div>
+
+          <!-- Card Action Button -->
+          <button type="button" onclick="openActionModal()"
+             class="w-full inline-flex items-center justify-center gap-2 py-4 px-6 rounded-xl font-display font-semibold text-base text-white btn-gradient transition-all shadow-md cursor-pointer">
+            <i data-lucide="zap" class="w-4 h-4 fill-amber-300 text-amber-300"></i>
+            <span>เลือกแพ็กเกจนี้ (สั่งทำ 199.-)</span>
+          </button>
+        </div>
+
+        <!-- RIGHT: UPSELL OPTIONS & ADD-ONS -->
+        <div class="lg:col-span-5 flex flex-col gap-5">
+          
+          <div class="text-xs font-bold text-slate-700 uppercase tracking-wider flex items-center gap-2">
+            <i data-lucide="plus-circle" class="w-4 h-4 text-blue-600"></i>
+            <span>ออปชันเสริมสำหรับยิงแอดจริงจัง (Add-ons):</span>
+          </div>
+
+          <!-- Add-on 1: Tracking Pixel -->
+          <div class="white-card white-card-hover rounded-2xl p-5">
+            <div class="flex items-start justify-between gap-3 mb-2">
+              <div class="flex items-center gap-2.5">
+                <div class="w-10 h-10 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center shrink-0">
+                  <i data-lucide="crosshair" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <h4 class="font-display font-bold text-base text-slate-900">ติดตั้ง Tracking Pixel</h4>
+                  <span class="text-xs text-slate-500">Meta Pixel / TikTok Pixel</span>
+                </div>
+              </div>
+              <span class="text-base font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded-lg border border-blue-200">+399.-</span>
+            </div>
+            <p class="text-xs text-slate-600 leading-relaxed pl-12">
+              ติดตั้งโค้ด Pixel พร้อมตั้งค่า Custom Event (Lead, Contact, PageView) เพื่อให้ระบบ AI ของ Facebook และ TikTok ยิงหาคนที่พร้อมสั่งซื้อตัวจริง
+            </p>
+          </div>
+
+          <!-- Add-on 2: Domain & High-speed Hosting -->
+          <div class="white-card white-card-hover rounded-2xl p-5">
+            <div class="flex items-start justify-between gap-3 mb-2">
+              <div class="flex items-center gap-2.5">
+                <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center shrink-0">
+                  <i data-lucide="globe" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <h4 class="font-display font-bold text-base text-slate-900">ซับโดเมนเนม + โฮสติ้งความเร็วสูง</h4>
+                  <span class="text-xs text-slate-500">เชื่อมต่อ subDomain & SSL ฟรี</span>
+                </div>
+              </div>
+              <span class="text-base font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded-lg border border-blue-200">+499.-</span>
+            </div>
+            <p class="text-xs text-slate-600 leading-relaxed pl-12">
+              ช่วยเชื่อมต่อโดเมนเนมส่วนตัวของลูกค้า (เช่น yourbrand.com) หรือตั้งค่า Sub-domain เช่น onedayweb.seikouedu.com พร้อมระบบ SSL กุญแจเขียว ปลอดภัย โหลดเร็วสุด
+            </p>
+          </div>
+
+          <!-- Guarantee Box -->
+          <div class="rounded-xl p-4 bg-emerald-50 border border-emerald-200 text-xs text-emerald-900 flex items-center gap-3 shadow-sm">
+            <i data-lucide="shield-check" class="w-6 h-6 text-emerald-600 shrink-0"></i>
+            <div>
+              <strong class="font-bold block text-emerald-950 text-sm">รับประกันความพึงพอใจ 100%</strong>
+              <span class="text-slate-600">ตรวจเช็กงานบนมือถือจริงก่อนส่งมอบ พร้อมดูแลให้คำปรึกษาตลอดการใช้งาน โทร 086-932-3838</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- SECTION: SAMPLES & SHOWCASE (ผลงานตัวอย่าง) -->
+  <!-- ========================================== -->
+  <section id="samples" class="py-16 md:py-24 bg-white border-b border-slate-200">
+    <div class="max-w-5xl mx-auto px-4">
+      
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-xs font-bold uppercase tracking-wider text-blue-700 bg-blue-50 px-3.5 py-1 rounded-full border border-blue-200">
+          PROVEN PORTFOLIO
+        </span>
+        <h2 class="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-slate-900 mt-3 mb-3">
+          ตัวอย่างรูปแบบ Landing Page ที่เราจัดทำ
+        </h2>
+        <p class="text-slate-600 text-sm sm:text-base">
+          ออกแบบปรับตามประเภทธุรกิจของคุณ ไม่ว่าจะเป็นสินค้าแฟชั่น, ความงาม, คอร์สออนไลน์, หรือบริการ
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Showcase 1: Beauty & Supplement -->
+        <div class="white-card white-card-hover rounded-2xl overflow-hidden group">
+          <div class="h-44 bg-gradient-to-tr from-pink-500 via-rose-400 to-pink-300 p-4 flex flex-col justify-between relative overflow-hidden text-white">
+            <div class="flex items-center justify-between text-xs">
+              <span class="px-2.5 py-0.5 rounded-full bg-white/30 backdrop-blur-sm font-semibold">ความงาม & อาหารเสริม</span>
+              <span class="font-medium text-pink-100">Mobile 100%</span>
+            </div>
+            <div class="text-center py-4">
+              <i data-lucide="sparkles" class="w-12 h-12 text-white mx-auto mb-1 group-hover:scale-110 transition-transform"></i>
+              <div class="text-xs font-semibold text-white/90">Skincare & Health Landing</div>
+            </div>
+            <div class="text-[11px] text-white bg-black/25 px-2.5 py-1 rounded backdrop-blur-sm">
+              เน้นรูป Before/After & ตารางโปรโมชัน 1 แถม 1
+            </div>
+          </div>
+          <div class="p-5">
+            <h4 class="font-display font-bold text-base text-slate-900 mb-1.5">หน้าขายสินค้าความงาม/สกินแคร์</h4>
+            <p class="text-xs text-slate-600 mb-4 leading-relaxed">จัดวางรีวิวผู้ใช้จริงชัดเจน ปุ่มทักแชทกระพริบดึงดูดสายตา ลูกค้ากดสั่งทันที</p>
+            <button type="button" onclick="selectNicheAndOpen('สินค้าความงาม/อาหารเสริม')" class="text-xs text-blue-600 font-bold hover:underline flex items-center gap-1 cursor-pointer">
+              <span>สั่งทำสไตล์นี้ (ทักแชททันที)</span>
+              <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Showcase 2: Online Course / Coaching -->
+        <div class="white-card white-card-hover rounded-2xl overflow-hidden group">
+          <div class="h-44 bg-gradient-to-tr from-blue-600 via-indigo-500 to-cyan-400 p-4 flex flex-col justify-between relative overflow-hidden text-white">
+            <div class="flex items-center justify-between text-xs">
+              <span class="px-2.5 py-0.5 rounded-full bg-white/30 backdrop-blur-sm font-semibold">คอร์สเรียน & ติวเตอร์</span>
+              <span class="font-medium text-blue-100">Lead Form Ready</span>
+            </div>
+            <div class="text-center py-4">
+              <i data-lucide="graduation-cap" class="w-12 h-12 text-white mx-auto mb-1 group-hover:scale-110 transition-transform"></i>
+              <div class="text-xs font-semibold text-white/90">Education & Seminar</div>
+            </div>
+            <div class="text-[11px] text-white bg-black/25 px-2.5 py-1 rounded backdrop-blur-sm">
+              เน้นหลักสูตร + ฟอร์มลงทะเบียนรับส่วนลดพิเศษ
+            </div>
+          </div>
+          <div class="p-5">
+            <h4 class="font-display font-bold text-base text-slate-900 mb-1.5">หน้าคอร์สสัมมนา / การศึกษา</h4>
+            <p class="text-xs text-slate-600 mb-4 leading-relaxed">แสดงเนื้อหาบทเรียน ชูคุณวุฒิผู้สอน ฟอร์มเก็บชื่อเบอร์โทรเพื่อติดต่อกลับ</p>
+            <button type="button" onclick="selectNicheAndOpen('คอร์สเรียน/สัมมนา')" class="text-xs text-blue-600 font-bold hover:underline flex items-center gap-1 cursor-pointer">
+              <span>สั่งทำสไตล์นี้ (ทักแชททันที)</span>
+              <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Showcase 3: Local Service & Clinic / Technician -->
+        <div class="white-card white-card-hover rounded-2xl overflow-hidden group">
+          <div class="h-44 bg-gradient-to-tr from-emerald-600 via-teal-500 to-cyan-400 p-4 flex flex-col justify-between relative overflow-hidden text-white">
+            <div class="flex items-center justify-between text-xs">
+              <span class="px-2.5 py-0.5 rounded-full bg-white/30 backdrop-blur-sm font-semibold">คลินิก & บริการด่วน</span>
+              <span class="font-medium text-emerald-100">Direct Call Focus</span>
+            </div>
+            <div class="text-center py-4">
+              <i data-lucide="wrench" class="w-12 h-12 text-white mx-auto mb-1 group-hover:scale-110 transition-transform"></i>
+              <div class="text-xs font-semibold text-white/90">Service & Emergency Repair</div>
+            </div>
+            <div class="text-[11px] text-white bg-black/25 px-2.5 py-1 rounded backdrop-blur-sm">
+              ปุ่มโทรด่วนฉุกเฉิน 086-932-3838 + แผนที่
+            </div>
+          </div>
+          <div class="p-5">
+            <h4 class="font-display font-bold text-base text-slate-900 mb-1.5">หน้าบริการช่าง / คลินิก / ร้านค้า</h4>
+            <p class="text-xs text-slate-600 mb-4 leading-relaxed">เน้นความไว ปุ่มกดโทรออกทันที รองรับงานบริการที่ลูกค้าต้องการความช่วยเหลือด่วน</p>
+            <button type="button" onclick="selectNicheAndOpen('บริการช่าง/คลินิก/ซ่อมด่วน')" class="text-xs text-blue-600 font-bold hover:underline flex items-center gap-1 cursor-pointer">
+              <span>สั่งทำสไตล์นี้ (ทักแชททันที)</span>
+              <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- SECTION 4: WORKFLOW & PROCESS (4 STEPS)    -->
+  <!-- ========================================== -->
+  <section id="process" class="py-16 md:py-24 bg-[#F8FAFC] border-b border-slate-200">
+    <div class="max-w-5xl mx-auto px-4">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs font-bold uppercase tracking-wider text-blue-700 bg-blue-50 px-3.5 py-1 rounded-full border border-blue-200">
+          HOW IT WORKS
+        </span>
+        <h2 class="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-slate-900 mt-3 mb-3">
+          ขั้นตอนง่ายๆ 4 สเต็ป ได้เว็บพร้อมยิงแอดใน 1 วัน
+        </h2>
+        <p class="text-slate-600 text-sm sm:text-base">
+          ไม่ต้องมีความรู้เรื่องคอมพิวเตอร์ เราดูแลให้ตั้งแต่ต้นจนส่งมอบงาน
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+        
+        <!-- Step 1 -->
+        <div class="white-card white-card-hover rounded-2xl p-6 relative group">
+          <div class="text-3xl font-display font-bold text-slate-300 group-hover:text-blue-500 transition-colors mb-3">
+            01
+          </div>
+          <div class="w-12 h-12 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-600 mb-4 shadow-sm">
+            <i data-lucide="message-square-text" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-display font-bold text-lg text-slate-900 mb-2">1. ทักแชท Inbox เพจ</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            ส่งข้อมูลสินค้า/บริการ รูปภาพ ราคา และเบอร์โทรผ่าน Inbox เพจ onedayweb2026 หรือโทร 086-932-3838
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="white-card white-card-hover rounded-2xl p-6 relative group">
+          <div class="text-3xl font-display font-bold text-slate-300 group-hover:text-indigo-500 transition-colors mb-3">
+            02
+          </div>
+          <div class="w-12 h-12 rounded-xl bg-indigo-50 border border-indigo-200 flex items-center justify-center text-indigo-600 mb-4 shadow-sm">
+            <i data-lucide="layout-template" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-display font-bold text-lg text-slate-900 mb-2">2. ออกแบบและจัดทำ</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            ทีมงานจัดโครงสร้างหน้าเว็บมาตรฐาน Conversion Rate สูง โหลดไว ดีไซน์เน้นขาย
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="white-card white-card-hover rounded-2xl p-6 relative group">
+          <div class="text-3xl font-display font-bold text-slate-300 group-hover:text-purple-500 transition-colors mb-3">
+            03
+          </div>
+          <div class="w-12 h-12 rounded-xl bg-purple-50 border border-purple-200 flex items-center justify-center text-purple-600 mb-4 shadow-sm">
+            <i data-lucide="smartphone-charging" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-display font-bold text-lg text-slate-900 mb-2">3. ตรวจสอบงาน</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            ส่งลิงก์ตัวอย่างให้คุณตรวจเช็กความถูกต้องบนมือถือจริง ทดสอบปุ่มโทรและปุ่มแชท
+          </p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="white-card rounded-2xl p-6 border-2 border-emerald-500 relative group shadow-md bg-emerald-50/40">
+          <div class="text-3xl font-display font-bold text-emerald-600 mb-3">
+            04
+          </div>
+          <div class="w-12 h-12 rounded-xl bg-emerald-100 border border-emerald-300 flex items-center justify-center text-emerald-700 mb-4 shadow-sm">
+            <i data-lucide="rocket" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-display font-bold text-lg text-slate-900 mb-2">4. ส่งมอบ & พร้อมใช้งาน</h3>
+          <p class="text-xs text-slate-700 leading-relaxed font-medium">
+            ออนไลน์หน้าเว็บพร้อมยิงแอดสร้างยอดขายได้ทันทีภายใน 24 ชม. ส่งงานตรงเวลาชัวร์
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- SECTION 5: INTERACTIVE LEAD & ORDER FORM   -->
+  <!-- ========================================== -->
+  <section id="order-form" class="py-16 md:py-24 bg-white border-b border-slate-200 relative">
+    
+    <div class="max-w-3xl mx-auto px-4 relative z-10">
+      
+      <div class="text-center mb-10">
+        <span class="text-xs font-bold uppercase tracking-wider text-blue-700 bg-blue-50 px-3.5 py-1 rounded-full border border-blue-200">
+          QUICK ORDER & INQUIRY
+        </span>
+        <h2 class="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-slate-900 mt-3 mb-2">
+          สั่งทำ Landing Page ด่วน 199.-
+        </h2>
+        <p class="text-slate-600 text-sm">
+          กรอกข้อมูลเบื้องต้นเพื่อให้เจ้าหน้าที่ติดต่อกลับและเริ่มงานทันที หรือทักแชท Inbox คุยกับเราโดยตรง
+        </p>
+      </div>
+
+      <!-- Main Order Container -->
+      <div class="white-card rounded-2xl border-2 border-blue-300 p-6 sm:p-8 md:p-10 shadow-xl shadow-blue-500/5">
+        
+        <!-- Direct Quick Call Hotline Box (Updated with 086-932-3838) -->
+        <div class="mb-8 p-4 rounded-xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div class="flex items-center gap-3">
+            <div class="w-11 h-11 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0">
+              <i data-lucide="phone-outgoing" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <div class="text-xs text-slate-500 font-medium">โทรสอบถามด่วน หรือปรึกษาฟรี (สายตรง)</div>
+              <div class="text-lg sm:text-xl font-bold font-mono text-slate-900">086-932-3838</div>
+            </div>
+          </div>
+          <a href="tel:0869323838" 
+             onclick="trackEvent('Contact', { type: 'LeadForm_DirectCall', number: '0869323838' })"
+             class="w-full sm:w-auto px-5 py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-sm transition-colors">
+            <i data-lucide="phone" class="w-3.5 h-3.5"></i>
+            <span>กดโทรออกทันที</span>
+          </a>
+        </div>
+
+        <!-- The Lead Form -->
+        <form id="leadForm" onsubmit="handleLeadSubmit(event)" class="space-y-5">
+          
+          <!-- Full Name -->
+          <div>
+            <label for="fullName" class="block text-xs font-semibold text-slate-700 mb-1.5">
+              ชื่อ-นามสกุล หรือชื่อร้านค้า <span class="text-red-500">*</span>
+            </label>
+            <div class="relative">
+              <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                <i data-lucide="user" class="w-4 h-4"></i>
+              </div>
+              <input type="text" id="fullName" name="fullName" required 
+                     placeholder="เช่น คุณกิตติศักดิ์ / ร้าน Happy Shop" 
+                     class="w-full pl-10 pr-4 py-3 rounded-xl bg-white border border-slate-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 text-slate-900 text-sm placeholder-slate-400 outline-none transition-all">
+            </div>
+          </div>
+
+          <!-- Phone Number -->
+          <div>
+            <label for="phoneNumber" class="block text-xs font-semibold text-slate-700 mb-1.5">
+              เบอร์โทรศัพท์สำหรับติดต่อกลับ <span class="text-red-500">*</span>
+            </label>
+            <div class="relative">
+              <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                <i data-lucide="phone" class="w-4 h-4"></i>
+              </div>
+              <input type="tel" id="phoneNumber" name="phoneNumber" required pattern="[0-9]{9,10}"
+                     placeholder="เช่น 0812345678 (9-10 หลัก)" 
+                     class="w-full pl-10 pr-4 py-3 rounded-xl bg-white border border-slate-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 text-slate-900 text-sm placeholder-slate-400 outline-none transition-all">
+            </div>
+          </div>
+
+          <!-- Business / Product Type -->
+          <div>
+            <label for="businessType" class="block text-xs font-semibold text-slate-700 mb-1.5">
+              ประเภทธุรกิจ หรือสินค้าที่ต้องการทำเว็บ <span class="text-red-500">*</span>
+            </label>
+            <div class="relative">
+              <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                <i data-lucide="briefcase" class="w-4 h-4"></i>
+              </div>
+              <input type="text" id="businessType" name="businessType" required
+                     placeholder="เช่น อาหารเสริม, เสื้อผ้า, คอร์สเรียน, อู่ซ่อมรถ, คลินิก" 
+                     class="w-full pl-10 pr-4 py-3 rounded-xl bg-white border border-slate-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 text-slate-900 text-sm placeholder-slate-400 outline-none transition-all">
+            </div>
+          </div>
+
+          <!-- Facebook Page link or LINE ID -->
+          <div>
+            <label for="contactLink" class="block text-xs font-semibold text-slate-700 mb-1.5">
+              ลิงก์เพจ Facebook หรือ LINE ID สำหรับประสานงาน
+            </label>
+            <div class="relative">
+              <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                <i data-lucide="link" class="w-4 h-4"></i>
+              </div>
+              <input type="text" id="contactLink" name="contactLink" 
+                     placeholder="เช่น @line_id หรือ fb.com/yourpage" 
+                     class="w-full pl-10 pr-4 py-3 rounded-xl bg-white border border-slate-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 text-slate-900 text-sm placeholder-slate-400 outline-none transition-all">
+            </div>
+          </div>
+
+          <!-- Add-on Selector Checkboxes -->
+          <div class="pt-2">
+            <span class="block text-xs font-semibold text-slate-700 mb-2">เลือกบริการเสริมเพิ่มเติม (ถ้ามี):</span>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+              
+              <label class="flex items-center gap-2.5 p-3 rounded-xl bg-slate-50 border border-slate-200 hover:border-blue-300 cursor-pointer transition-colors">
+                <input type="checkbox" id="addonPixel" name="addonPixel" value="Meta/TikTok Pixel (+399)" class="w-4 h-4 accent-blue-600 rounded">
+                <span class="text-slate-800 font-medium">ติดตั้ง Tracking Pixel (+399.-)</span>
+              </label>
+
+              <label class="flex items-center gap-2.5 p-3 rounded-xl bg-slate-50 border border-slate-200 hover:border-blue-300 cursor-pointer transition-colors">
+                <input type="checkbox" id="addonDomain" name="addonDomain" value="subDomain (+499)" class="w-4 h-4 accent-blue-600 rounded">
+                <span class="text-slate-800 font-medium">ซับโดเมนเนม + โฮสติ้งความเร็วสูง (+499.-)</span>
+              </label>
+
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="pt-4">
+            <button type="submit" id="submitBtn"
+                    class="w-full py-4 px-6 rounded-xl font-display font-semibold text-base sm:text-lg text-white btn-gradient active:scale-98 transition-all flex items-center justify-center gap-2 cursor-pointer shadow-lg">
+              <i data-lucide="send" class="w-5 h-5"></i>
+              <span>ส่งข้อมูลให้เจ้าหน้าที่ติดต่อกลับทันที</span>
+            </button>
+            <div class="text-center text-[11px] text-slate-500 mt-2.5 flex items-center justify-center gap-1.5">
+              <i data-lucide="lock" class="w-3.5 h-3.5 text-blue-600"></i>
+              <span>ข้อมูลของคุณจะถูกเก็บเป็นความลับเพื่อใช้ในการติดต่อสั่งทำเว็บเท่านั้น</span>
+            </div>
+          </div>
+
+        </form>
+
+        <!-- Direct 1-Click Facebook Messenger Inbox (NO double clicking required!) -->
+        <div class="mt-8 pt-6 border-t border-slate-200 text-center">
+          <p class="text-xs text-slate-600 mb-3 font-medium">หรือต้องการเริ่มคุยบรีฟงานกับทีมงานโดยตรงทันทีไม่ต้องรอ?</p>
+          <a href="https://m.me/onedayweb2026" target="_blank" rel="noopener noreferrer"
+             onclick="trackEvent('Contact', { type: 'Direct_Messenger_Inbox', page: 'onedayweb2026' })"
+             class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl btn-messenger text-white font-bold text-xs sm:text-sm shadow-md transition-all">
+            <i data-lucide="message-circle" class="w-5 h-5 fill-white"></i>
+            <span>💬 ทักแชท Inbox เพจ Facebook: onedayweb2026 (เปิดแชทคุยทันที)</span>
+          </a>
+          <span class="block text-[11px] text-slate-500 mt-1.5">*คลิกปุ๊บ เปิดหน้าต่างแชทสนทนากับแอดมินทันที ไม่ต้องกดซ้ำ</span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- SECTION 6: FAQ (ACCORDION)                 -->
+  <!-- ========================================== -->
+  <section id="faq" class="py-16 md:py-24 bg-[#F8FAFC] border-b border-slate-200">
+    <div class="max-w-4xl mx-auto px-4">
+      
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-xs font-bold uppercase tracking-wider text-blue-700 bg-blue-50 px-3.5 py-1 rounded-full border border-blue-200">
+          FREQUENTLY ASKED QUESTIONS
+        </span>
+        <h2 class="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-slate-900 mt-3 mb-3">
+          คำถามที่พบบ่อย (FAQ)
+        </h2>
+        <p class="text-slate-600 text-sm">
+          ตอบทุกข้อสงสัยเกี่ยวกับการทำ Landing Page 199 บาท
+        </p>
+      </div>
+
+      <div class="space-y-3.5">
+        
+        <!-- FAQ 1 -->
+        <div class="faq-item white-card rounded-xl overflow-hidden shadow-sm">
+          <button type="button" onclick="toggleFaq(this)" class="w-full p-4 sm:p-5 text-left flex items-center justify-between gap-4 font-display font-semibold text-sm sm:text-base text-slate-900 hover:text-blue-600 transition-colors">
+            <span class="flex items-center gap-3">
+              <span class="text-blue-600 font-bold">Q:</span>
+              <span>199 บาท ต้องเตรียมข้อมูลอะไรมาบ้าง?</span>
+            </span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-400 shrink-0 transition-transform duration-200"></i>
+          </button>
+          <div class="faq-content hidden px-4 sm:px-5 pb-5 text-xs sm:text-sm text-slate-600 border-t border-slate-100 pt-3 leading-relaxed">
+            เตรียมข้อมูลพื้นฐานเพียง 3 อย่างครับ:
+            <ul class="list-disc pl-5 mt-2 space-y-1 text-slate-700 font-medium">
+              <li>1. รูปภาพสินค้าหรือบริการ (3-5 รูป)</li>
+              <li>2. ข้อความสั้นๆ เช่น จุดเด่น ราคาโปรโมชัน หรือรีวิว</li>
+              <li>3. ลิงก์ช่องทางติดต่อ เช่น เบอร์โทร หรือ Facebook Page / LINE ID</li>
+            </ul>
+            ส่งมาทาง Inbox เพจ <a href="https://m.me/onedayweb2026" target="_blank" class="text-blue-600 underline font-bold">onedayweb2026</a> หรือโทร 086-932-3838 ได้เลยครับ!
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-item white-card rounded-xl overflow-hidden shadow-sm">
+          <button type="button" onclick="toggleFaq(this)" class="w-full p-4 sm:p-5 text-left flex items-center justify-between gap-4 font-display font-semibold text-sm sm:text-base text-slate-900 hover:text-blue-600 transition-colors">
+            <span class="flex items-center gap-3">
+              <span class="text-blue-600 font-bold">Q:</span>
+              <span>ใช้เวลาทำนานแค่ไหน? เสร็จใน 24 ชม. จริงไหม?</span>
+            </span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-400 shrink-0 transition-transform duration-200"></i>
+          </button>
+          <div class="faq-content hidden px-4 sm:px-5 pb-5 text-xs sm:text-sm text-slate-600 border-t border-slate-100 pt-3 leading-relaxed">
+            เสร็จภายใน 24 ชั่วโมงจริงครับ! นับตั้งแต่ลูกค้าส่งข้อมูลครบถ้วน ทีมงานจะเริ่มขึ้นโครงสร้างและส่งลิงก์ตัวอย่างงานให้ตรวจเช็กบนมือถือภายใน 1 วัน เพื่อให้คุณนำไปยิงแอดสร้างยอดขายได้ทันท่วงที
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-item white-card rounded-xl overflow-hidden shadow-sm">
+          <button type="button" onclick="toggleFaq(this)" class="w-full p-4 sm:p-5 text-left flex items-center justify-between gap-4 font-display font-semibold text-sm sm:text-base text-slate-900 hover:text-blue-600 transition-colors">
+            <span class="flex items-center gap-3">
+              <span class="text-blue-600 font-bold">Q:</span>
+              <span>นำไปยิงแอดบน Facebook หรือ TikTok ได้เลยไหม?</span>
+            </span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-400 shrink-0 transition-transform duration-200"></i>
+          </button>
+          <div class="faq-content hidden px-4 sm:px-5 pb-5 text-xs sm:text-sm text-slate-600 border-t border-slate-100 pt-3 leading-relaxed">
+            สามารถนำไปยิงแอดได้ทันที 100% ครับ โค้ดของเรารองรับ Facebook In-App Browser และ TikTok Browser โหลดเร็วเป็นพิเศษ และหากลูกค้าเลือกออปชันเสริมติดตั้ง Tracking Pixel (+399.-) เราจะติดตั้งโค้ดและส่งพิกเซลให้เรียบร้อยเพื่อยิงแอด Conversion อย่างแม่นยำ
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-item white-card rounded-xl border border-slate-200 overflow-hidden shadow-sm">
+          <button type="button" onclick="toggleFaq(this)" class="w-full p-4 sm:p-5 text-left flex items-center justify-between gap-4 font-display font-semibold text-sm sm:text-base text-slate-900 hover:text-blue-600 transition-colors">
+            <span class="flex items-center gap-3">
+              <span class="text-blue-600 font-bold">Q:</span>
+              <span>ถ้ายังไม่มีโดเมนหรือโฮสติ้ง สามารถใช้งานได้ไหม?</span>
+            </span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-400 shrink-0 transition-transform duration-200"></i>
+          </button>
+          <div class="faq-content hidden px-4 sm:px-5 pb-5 text-xs sm:text-sm text-slate-600 border-t border-slate-100 pt-3 leading-relaxed">
+            ได้แน่นอนครับ! เราสามารถส่งมอบเป็นไฟล์ HTML ให้คุณนำไปอัปโหลดขึ้นเซิร์ฟเวอร์ของคุณเอง หรือหากต้องการความสะดวก สามารถเลือกรับบริการแพ็กเกจซับโดเมนเนม + โฮสติ้งความเร็วสูง (+499.-) เราดูแลเปิดออนไลน์ให้พร้อมใช้งานทันทีครับ
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- FOOTER                                     -->
+  <!-- ========================================== -->
+  <footer class="bg-white border-t border-slate-200 py-12 pb-24 md:pb-12 text-xs text-slate-500">
+    <div class="max-w-5xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
+      
+      <div class="flex items-center gap-3">
+        <!-- Logo -->
+        <div class="w-10 h-10 rounded-xl overflow-hidden p-0.5 bg-gradient-to-tr from-blue-600 to-cyan-500 shadow-sm">
+          <img src="logo.jpg" alt="WebFast 199 Logo" class="w-full h-full object-cover rounded-[8px]" onerror="this.src='Gemini_Generated_Image_yxhnl9yxhnl9yxhn.jpg'">
+        </div>
+        <div>
+          <span class="font-display font-bold text-slate-900 text-sm">WebFast 199</span>
+          <p class="text-[11px] text-slate-500">บริการรับทำ Landing Page หน้าเดียวเสร็จใน 1 วัน เพื่อการยิงแอดสร้างยอดขาย</p>
+        </div>
+      </div>
+
+      <div class="text-center md:text-right space-y-1.5">
+        <p class="text-slate-700 font-medium">
+          ฝ่ายบริการลูกค้า & สายตรงด่วน: โทร <a href="tel:0869323838" class="text-emerald-700 font-bold hover:underline">086-932-3838</a>
+        </p>
+        <p class="text-slate-600">
+          Facebook Page: <a href="https://www.facebook.com/onedayweb2026" target="_blank" class="text-blue-600 font-semibold hover:underline">fb.com/onedayweb2026</a>
+          | Inbox: <a href="https://m.me/onedayweb2026" target="_blank" class="text-blue-600 font-bold underline">m.me/onedayweb2026</a>
+        </p>
+        <p class="text-slate-400 text-[11px]">© 2026 WebFast 199. All rights reserved. Hosted under onedayweb.seikouedu.com</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ========================================== -->
+  <!-- SECTION 7: STICKY FOOTER BAR (MOBILE ONLY) -->
+  <!-- ========================================== -->
+  <div class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-lg border-t border-slate-200 p-2.5 px-3 flex items-center gap-2 shadow-[0_-5px_20px_rgba(0,0,0,0.08)]">
+    
+    <!-- Phone Call Button (086-932-3838) -->
+    <a href="tel:0869323838" 
+       onclick="trackEvent('Contact', { type: 'MobileSticky_Call', number: '0869323838' })"
+       class="flex-1 py-3 px-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-display font-semibold text-xs flex items-center justify-center gap-1.5 border border-slate-300 active:scale-95 transition-all">
+      <i data-lucide="phone-call" class="w-4 h-4 text-emerald-600"></i>
+      <span>โทรทันที</span>
+    </a>
+
+    <!-- Direct Messenger 1-Click Button -->
+    <a href="https://m.me/onedayweb2026" target="_blank" rel="noopener noreferrer"
+       onclick="trackEvent('Contact', { type: 'MobileSticky_Messenger_1Click' })"
+       class="flex-[2] py-3 px-3 rounded-xl btn-messenger text-white font-display font-bold text-xs flex items-center justify-center gap-1.5 shadow-lg active:scale-95 transition-all">
+      <i data-lucide="message-circle" class="w-4 h-4 fill-white"></i>
+      <span>ทัก Inbox เพจ (199.-)</span>
+    </a>
+
+  </div>
+
+  <!-- ========================================== -->
+  <!-- FLOATING QUICK ACTION BUTTON (DESKTOP/MOBILE) -->
+  <!-- ========================================== -->
+  <div class="fixed bottom-20 md:bottom-6 right-4 z-40 flex flex-col items-end gap-2">
+    <!-- Messenger Floating Bubble -->
+    <a href="https://m.me/onedayweb2026" target="_blank" rel="noopener noreferrer"
+       onclick="trackEvent('Contact', { type: 'Floating_Messenger_Click' })"
+       class="group flex items-center gap-2 px-4 py-3 rounded-full btn-messenger text-white text-xs font-bold shadow-2xl hover:scale-105 active:scale-95 transition-all">
+      <div class="relative">
+        <i data-lucide="message-circle" class="w-5 h-5 fill-white"></i>
+        <span class="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-emerald-400 border-2 border-white animate-ping-slow"></span>
+      </div>
+      <span class="hidden sm:inline">ทัก Inbox แอดมินตอบไว</span>
+      <span class="sm:hidden">Inbox เพจ</span>
+    </a>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- HIGH-CONVERTING DIRECT ACTION POP-UP MODAL -->
+  <!-- ========================================== -->
+  <div id="actionModal" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/70 backdrop-blur-sm p-4 hidden">
+    <div class="bg-white max-w-md w-full rounded-3xl p-6 sm:p-7 border-2 border-blue-400 text-center shadow-2xl relative transform transition-all">
+      
+      <!-- Close Button -->
+      <button type="button" onclick="closeActionModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 hover:text-slate-800 flex items-center justify-center transition-colors">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <!-- Modal Badge & Status -->
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-semibold mb-4">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+        <span>🟢 แอดมินออนไลน์ พร้อมตอบแชททันที</span>
+      </div>
+
+      <!-- Heading -->
+      <h3 class="font-display font-bold text-2xl text-slate-900 mb-1">
+        สั่งทำ Landing Page ด่วน 199.-
+      </h3>
+      <p class="text-xs text-slate-600 mb-6 leading-relaxed">
+        ส่งงานไวใน 24 ชม. พร้อมยิงแอดทันที! เลือกช่องทางติดต่อด้านล่างเพื่อเริ่มงานได้เลยครับ
+      </p>
+
+      <!-- Action 1: Direct 1-Click Messenger Inbox (NO double clicking!) -->
+      <div class="space-y-3">
+        
+        <a href="https://m.me/onedayweb2026" target="_blank" rel="noopener noreferrer"
+           onclick="trackEvent('Contact', { type: 'Modal_Direct_Messenger' })"
+           class="w-full py-4 px-5 rounded-2xl btn-messenger text-white font-display font-bold text-sm sm:text-base flex items-center justify-between shadow-xl hover:scale-[1.01] active:scale-95 transition-all">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center shrink-0">
+              <i data-lucide="message-circle" class="w-5 h-5 fill-white text-white"></i>
+            </div>
+            <div class="text-left">
+              <div class="text-sm font-bold">ทักแชท Inbox เพจ Facebook</div>
+              <div class="text-[11px] text-blue-100 font-normal">เปิดหน้าต่างแชททันที ไม่ต้องกดซ้ำ</div>
+            </div>
+          </div>
+          <i data-lucide="chevron-right" class="w-5 h-5 text-white/80"></i>
+        </a>
+
+        <!-- Action 2: Direct Call -->
+        <a href="tel:0869323838" 
+           onclick="trackEvent('Contact', { type: 'Modal_Direct_Call', number: '0869323838' })"
+           class="w-full py-3.5 px-5 rounded-2xl btn-call text-white font-display font-bold text-sm sm:text-base flex items-center justify-between shadow-lg hover:scale-[1.01] active:scale-95 transition-all">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center shrink-0">
+              <i data-lucide="phone-call" class="w-5 h-5 text-white"></i>
+            </div>
+            <div class="text-left">
+              <div class="text-sm font-bold">โทรด่วน: 086-932-3838</div>
+              <div class="text-[11px] text-emerald-100 font-normal">สายตรงเจ้าหน้าที่ ปรึกษาฟรีทันที</div>
+            </div>
+          </div>
+          <i data-lucide="chevron-right" class="w-5 h-5 text-white/80"></i>
+        </a>
+
+        <!-- Action 3: Order Form Scroll -->
+        <button type="button" onclick="closeActionModal(); document.getElementById('order-form').scrollIntoView({ behavior: 'smooth' });"
+                class="w-full py-3 px-4 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold border border-slate-200 transition-colors flex items-center justify-center gap-2">
+          <i data-lucide="edit-3" class="w-4 h-4 text-slate-500"></i>
+          <span>หรือกรอกฟอร์มสั่งทำเว็บในหน้านี้ (199.-)</span>
+        </button>
+
+      </div>
+
+      <div class="text-[11px] text-slate-400 mt-4">
+        ⚡ เพจ: <a href="https://www.facebook.com/onedayweb2026" target="_blank" class="text-blue-600 font-semibold underline">onedayweb2026</a> | โทร: 086-932-3838
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- SUBMISSION SUCCESS MODAL                   -->
+  <!-- ========================================== -->
+  <div id="successModal" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4 hidden">
+    <div class="bg-white max-w-sm w-full rounded-2xl p-6 border border-slate-200 text-center shadow-2xl relative animate-float-slow">
+      
+      <div class="w-14 h-14 rounded-full bg-emerald-100 text-emerald-600 border border-emerald-300 flex items-center justify-center mx-auto mb-4">
+        <i data-lucide="check-check" class="w-8 h-8"></i>
+      </div>
+
+      <h3 class="font-display font-bold text-xl text-slate-900 mb-2">ได้รับข้อมูลเรียบร้อยแล้ว!</h3>
+      <p class="text-xs text-slate-600 mb-6 leading-relaxed">
+        ทีมงาน WebFast 199 กำลังตรวจสอบข้อมูล และจะติดต่อกลับทางเบอร์โทรศัพท์ 086-932-3838 หรือ Inbox เพจ ภายใน 15-30 นาทีครับ
+      </p>
+
+      <div class="space-y-2.5">
+        <a href="https://m.me/onedayweb2026" target="_blank" rel="noopener noreferrer"
+           class="w-full py-3.5 px-4 rounded-xl btn-messenger text-white font-semibold text-xs flex items-center justify-center gap-2 shadow-md transition-all">
+          <i data-lucide="message-circle" class="w-4 h-4 fill-white"></i>
+          <span>ทักแชท Inbox เพจ เพื่อเริ่มงานทันที</span>
+        </a>
+        
+        <button type="button" onclick="closeSuccessModal()" 
+                class="w-full py-2.5 px-4 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 text-xs font-semibold border border-slate-200">
+          ปิดหน้าต่าง
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- TOAST NOTIFICATION (Social Proof)          -->
+  <!-- ========================================== -->
+  <div id="socialProofToast" class="fixed bottom-20 md:bottom-6 left-4 z-40 bg-white border border-slate-200 text-slate-800 text-xs px-4 py-3 rounded-xl shadow-xl flex items-center gap-3 backdrop-blur-md transition-all duration-500 transform translate-y-24 opacity-0 pointer-events-none">
+    <div class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shrink-0">
+      <i data-lucide="sparkles" class="w-4 h-4"></i>
+    </div>
+    <div>
+      <span class="font-bold text-slate-900 block text-xs" id="toastTitle">คุณกิตติศักดิ์ สั่งทำเซลเพจ</span>
+      <span class="text-[11px] text-slate-500" id="toastTime">เมื่อ 3 นาทีที่แล้ว</span>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- JAVASCRIPT LOGIC                           -->
+  <!-- ========================================== -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Tracking Helper function
+    function trackEvent(eventName, params = {}) {
+      try {
+        if (typeof fbq === 'function') {
+          fbq('track', eventName, params);
+          console.log(`[Tracking] Meta Pixel Tracked: ${eventName}`, params);
+        } else {
+          console.log(`[Tracking Placeholder] ${eventName}:`, params);
+        }
+      } catch (err) {
+        console.warn('Tracking error:', err);
+      }
+    }
+
+    // Modal Control Functions
+    function openActionModal() {
+      trackEvent('Contact', { type: 'ActionModal_Opened' });
+      document.getElementById('actionModal').classList.remove('hidden');
+    }
+
+    function closeActionModal() {
+      document.getElementById('actionModal').classList.add('hidden');
+    }
+
+    function closeSuccessModal() {
+      document.getElementById('successModal').classList.add('hidden');
+    }
+
+    // Close modal on ESC key
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeActionModal();
+        closeSuccessModal();
+      }
+    });
+
+    // Close modal on clicking backdrop
+    document.getElementById('actionModal').addEventListener('click', (e) => {
+      if (e.target.id === 'actionModal') closeActionModal();
+    });
+
+    // Auto-open Action Modal after 7 seconds for high conversion (only once per session)
+    setTimeout(() => {
+      if (!sessionStorage.getItem('actionModalShown')) {
+        openActionModal();
+        sessionStorage.setItem('actionModalShown', 'true');
+      }
+    }, 7000);
+
+    // FAQ Accordion Toggle
+    function toggleFaq(button) {
+      const content = button.nextElementSibling;
+      const icon = button.querySelector('.faq-icon');
+      const isHidden = content.classList.contains('hidden');
+
+      // Close all other FAQs for clean single accordion
+      document.querySelectorAll('.faq-content').forEach(item => item.classList.add('hidden'));
+      document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove('rotate-180'));
+
+      if (isHidden) {
+        content.classList.remove('hidden');
+        if (icon) icon.classList.add('rotate-180');
+      }
+    }
+
+    // Lead Form Submission Handler
+    function handleLeadSubmit(event) {
+      event.preventDefault();
+      
+      const submitBtn = document.getElementById('submitBtn');
+      const fullName = document.getElementById('fullName').value.trim();
+      const phoneNumber = document.getElementById('phoneNumber').value.trim();
+      const businessType = document.getElementById('businessType').value.trim();
+      const contactLink = document.getElementById('contactLink').value.trim();
+      
+      const pixelChecked = document.getElementById('addonPixel').checked;
+      const domainChecked = document.getElementById('addonDomain').checked;
+
+      if (!fullName || !phoneNumber || !businessType) {
+        alert('กรุณากรอกข้อมูลที่จำเป็นให้ครบถ้วน');
+        return;
+      }
+
+      // Button loading state
+      const originalBtnHTML = submitBtn.innerHTML;
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `
+        <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
+        <span>กำลังบันทึกข้อมูล...</span>
+      `;
+
+      // Trigger Meta Pixel Lead Event
+      trackEvent('Lead', {
+        content_name: 'Fast199_Landing_Order',
+        business_type: businessType,
+        has_pixel_addon: pixelChecked,
+        has_domain_addon: domainChecked,
+        value: 199 + (pixelChecked ? 399 : 0) + (domainChecked ? 499 : 0),
+        currency: 'THB'
+      });
+
+      setTimeout(() => {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnHTML;
+        
+        // Show success modal
+        document.getElementById('successModal').classList.remove('hidden');
+
+        // Reset form
+        document.getElementById('leadForm').reset();
+      }, 700);
+    }
+
+    function selectNicheAndOpen(nicheName) {
+      const businessInput = document.getElementById('businessType');
+      if (businessInput) businessInput.value = nicheName;
+      openActionModal();
+    }
+
+    // Social Proof Toast Simulation
+    const recentOrders = [
+      { name: 'คุณเอกชัย (นนทบุรี)', item: 'สั่งทำเซลเพจครีมบำรุงผิว', time: 'เมื่อ 2 นาทีที่แล้ว' },
+      { name: 'คุณพิมพ์ใจ (กทม.)', item: 'สั่งทำหน้าเว็บคอร์สเรียนภาษา', time: 'เมื่อ 7 นาทีที่แล้ว' },
+      { name: 'คุณธีรวัฒน์ (ชลบุรี)', item: 'สั่งทำ Landing Page บริการช่างแอร์', time: 'เมื่อ 12 นาทีที่แล้ว' },
+      { name: 'ร้าน Maybell Boutique', item: 'สั่งทำหน้าโปรโมชันเสื้อผ้าแฟชั่น', time: 'เมื่อ 15 นาทีที่แล้ว' }
+    ];
+
+    let orderIndex = 0;
+    function triggerSocialToast() {
+      const toast = document.getElementById('socialProofToast');
+      if (!toast) return;
+
+      const order = recentOrders[orderIndex % recentOrders.length];
+      document.getElementById('toastTitle').textContent = `${order.name} ${order.item}`;
+      document.getElementById('toastTime').textContent = order.time;
+
+      toast.classList.remove('translate-y-24', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-24', 'opacity-0');
+      }, 4000);
+
+      orderIndex++;
+    }
+
+    setTimeout(() => {
+      triggerSocialToast();
+      setInterval(triggerSocialToast, 18000);
+    }, 4000);
+
+  </script>
+</body>
+</html>

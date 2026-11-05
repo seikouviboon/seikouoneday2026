@@ -1,0 +1,13 @@
+file 'C:/Users/WIN-10 PRO/OneDrive/Documents/onedayweb/reel_assets/frame_scene1.png'
+duration 5
+file 'C:/Users/WIN-10 PRO/OneDrive/Documents/onedayweb/reel_assets/frame_scene2.png'
+duration 7
+file 'C:/Users/WIN-10 PRO/OneDrive/Documents/onedayweb/reel_assets/frame_scene3.png'
+duration 13
+file 'C:/Users/WIN-10 PRO/OneDrive/Documents/onedayweb/reel_assets/frame_scene4.png'
+duration 13
+file 'C:/Users/WIN-10 PRO/OneDrive/Documents/onedayweb/reel_assets/frame_scene5.png'
+duration 12
+file 'C:/Users/WIN-10 PRO/OneDrive/Documents/onedayweb/reel_assets/frame_scene6.png'
+duration 10
+file 'C:/Users/WIN-10 PRO/OneDrive/Documents/onedayweb/reel_assets/frame_scene6.png'
